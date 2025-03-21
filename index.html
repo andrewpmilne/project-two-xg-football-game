@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Document</title>
+</head>
+
+<body class="bg-gray-100">
+    <!-- navbar -->
+    <nav class="w-full px-6 py-4 flex items-center justify-between bg-lime-300">
+        <p class="text-2xl font-mono font-bold">Football XG Game</p>
+        <div class="flex gap-4 bg-lime-300">
+            <a href="#"
+                class="px-4 py-2 bg-white text-black rounded-md font-mono text-lg shadow-md border border-black hover:bg-gray-300 hover:text-blue-700">Play
+                Game</a>
+            <a href="#"
+                class="px-4 py-2 bg-white text-black rounded-md font-mono text-lg shadow-md border border-black hover:bg-gray-300 hover:text-blue-700">Rules</a>
+        </div>
+    </nav>
+    <!-- Buttons and info section-->
+    <div class="flex w-full">
+        <div class="w-1/2 flex flex-col items-center justify-center">
+            <p>Goals: <span>0</span></p>
+            <p>Time: <span>180</span> seconds</p>
+            <p>Distance to goal: <span>60</span>m</p>
+        </div>
+        <div class="w-1/2 flex flex-col items-center justify-center">
+            <button
+                class="w-full px-6 py-3 bg-blue-300 text-black font-mono text-lg font-bold rounded-md shadow-md hover:bg-blue-500 hover:text-white">Start
+                Game</button>
+            <div class="flex gap-2 w-full justify-center">
+                <button
+                    class="px-4 py-2 bg-lime-300 text-black font-mono text-lg font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">Long
+                    Pass</button>
+                <button
+                    class="px-4 py-2 bg-lime-300 text-black font-mono text-lg font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">Short
+                    Pass</button>
+                <button
+                    class="px-4 py-2 bg-lime-300 text-black font-mono text-lg font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">Dribble</button>
+                <button
+                    class="px-4 py-2 bg-lime-300 text-black font-mono text-lg font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">Shoot</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
