@@ -7,52 +7,53 @@
     <link rel="stylesheet" href="assets/CSS/style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <title>Document</title>
+    <title>The XG football game</title>
 </head>
 
-<body class="bg-gray-100">
+<body class="max-h-screen bg-gray-100 flex flex-col">
 
-    <nav class="w-full min-w-full h-[8vh] px-6 py-4 flex items-center bg-lime-300">
-        <p class="text-base font-mono font-bold flex-1 text-center sm:text-left">Football XG Game</p>
-        <div class="flex gap-4 w-full justify-end mt-2">
-            <a href="#"
-                class="px-4 py-2 bg-white text-black rounded-md font-mono text-base shadow-md border border-black hover:bg-gray-300 hover:text-blue-700">
+    <nav class="w-full min-w-full max-h-[5vh] px-6 py-4 flex items-center bg-lime-300">
+        <p class="text-xs font-mono font-bold flex-1 text-center">Football XG Game</p>
+        <div class="flex gap-4 w-full justify-end">
+            <a href="index.html"
+                class="px-2 py-2 bg-white text-black rounded-md font-mono text-xs shadow-md border border-black hover:bg-gray-300 hover:text-blue-700">
                 Play Game
             </a>
-            <a href="#"
-                class="px-4 py-2 bg-white text-black rounded-md font-mono text-base shadow-md border border-black hover:bg-gray-300 hover:text-blue-700">
+            <a href="rules.html"
+                class="px-2 py-2 bg-white text-black rounded-md font-mono text-xs shadow-md border border-black hover:bg-gray-300 hover:text-blue-700">
                 Rules
             </a>
         </div>
     </nav>
 
     <!-- Buttons and info section-->
-    <div class="flex w-full flex-row h-[28vh]">
+    <div id="info" class="flex w-full flex-row">
         <div class="w-1/2 flex flex-col flex-grow p-3 space-y-1">
-            <p class="text-base p-1 bg-orange-200 border-2 border-white rounded-lg">Goals: <span>0</span></p>
-            <p class="text-base p-1 bg-orange-200 border-2 border-white rounded-lg">Time: <span>180</span> seconds</p>
-            <p class="text-base p-1 bg-orange-200 border-2 border-white rounded-lg">Distance to goal: <span>60</span>m
+            <p class="text-xs p-1 bg-orange-200 border-2 border-white rounded-lg">Goals: <span>0</span></p>
+            <p class="text-xs p-1 bg-orange-200 border-2 border-white rounded-lg">Time: <span id="time">90</span>
+                seconds</p>
+            <p class="text-xs p-1 bg-orange-200 border-2 border-white rounded-lg">Distance to goal: <span>60</span>m
             </p>
         </div>
         <div class="w-1/2 flex flex-col">
-            <button
-                class="w-full px-6 py-3 bg-blue-300 text-black font-mono text-base font-bold rounded-md shadow-md mt-3 hover:bg-blue-500 hover:text-white">Start
+            <button id="start-game"
+                class="w-full px-6 py-3 bg-blue-300 text-black font-mono text-xs font-bold rounded-md shadow-md mt-3 hover:bg-blue-500 hover:text-white">Start
                 Game</button>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-2 w-full mt-4">
                 <button
-                    class="px-4 py-2 bg-lime-300 text-black font-mono text-base font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
+                    class="px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
                     Long Pass
                 </button>
                 <button
-                    class="px-4 py-2 bg-lime-300 text-black font-mono text-base font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
+                    class="px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
                     Short Pass
                 </button>
                 <button
-                    class="px-4 py-2 bg-lime-300 text-black font-mono text-base font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
+                    class="px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
                     Dribble
                 </button>
                 <button
-                    class="px-4 py-2 bg-lime-300 text-black font-mono text-base font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
+                    class="px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
                     Shoot
                 </button>
             </div>
@@ -60,10 +61,13 @@
     </div>
 
     <!-- Playing area section-->
-    <div id="what">
-        <p> test</p>
+    <div id="what" class="w-full flex flex-grow relative justify-center mt-4">
+        <img id="pitch" src="assets/images/pitch-image-two.jpg" alt="football pitch">
+        <img id="ball" class="absolute top-2/5" src="assets/images/football.jpg" alt="football">
     </div>
 
+    <!-- Scripts -->
+    <script src="assets/JS/script.js"></script>
 </body>
 
 </html>
