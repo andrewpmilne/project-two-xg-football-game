@@ -1,3 +1,10 @@
-#what {
-    background-color: brown;
+#ball {
+    width: 35px;
+    height: 35px;
+    left: 10%;
+}
+
+#pitch {
+    width: 90%;
+    height: 300px
 }
