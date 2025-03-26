@@ -10,19 +10,28 @@ document.addEventListener("DOMContentLoaded", function () {
     closeWelcomeModal.addEventListener("click", function () {
         welcomeModal.classList.add("hidden");
     });
+
+    const buttons = document.getElementsByClassName('game-button');
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+    }
 });
-
-
-const startButton = document.getElementById("start-game");
-startButton.addEventListener("click", startGame);
-
 
 let goals = document.getElementById("goals").innerText
 let time = document.getElementById("time").innerText
 let distance = document.getElementById("distance").innerText
 let countdown;
 let choice = [];
-let buttons = document.getElementsByClassName('game-button');
+const buttons = document.getElementsByClassName('game-button');
+
+const startButton = document.getElementById("start-game");
+startButton.addEventListener("click", startGame);
+
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function () {
+        compChoice(buttons[i].innerText);
+    });
+}
 
 function startGame() {
     clearInterval(countdown);
@@ -49,7 +58,9 @@ function startGame() {
     }, 1000);
 }
 
-function compChoice() {
+function compChoice(playerChoice) {
+    console.log("hello2");
+    console.log(playerChoice);
 
 }
 
@@ -65,4 +76,6 @@ function forwardTwo() {
 
 }
 
-function returnBall() {}
+function returnBall() {
+
+}
