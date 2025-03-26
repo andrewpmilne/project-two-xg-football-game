@@ -1,7 +1,22 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const welcomeModal = document.getElementById("welcome-modal");
+    const closeWelcomeModal = document.getElementById("close-welcome-modal");
+
+    if (!sessionStorage.getItem("modalShown")) {
+        welcomeModal.classList.remove("hidden");
+        sessionStorage.setItem("modalShown", "true");
+    }
+
+    closeWelcomeModal.addEventListener("click", function () {
+        welcomeModal.classList.add("hidden");
+    });
+});
+
+
 const startButton = document.getElementById("start-game");
 startButton.addEventListener("click", startGame);
 
-// Variables
+
 let goals = document.getElementById("goals").innerText
 let time = document.getElementById("time").innerText
 let distance = document.getElementById("distance").innerText

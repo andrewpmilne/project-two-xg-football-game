@@ -27,7 +27,7 @@
     </nav>
 
     <!-- Buttons and info section-->
-    <div id="info" class="flex w-full flex-row max-h-[25vh]">
+    <div id="info" class="flex w-full flex-row max-h-[26vh]">
         <div class="w-1/2 flex flex-col flex-grow p-3 space-y-1">
             <p class="text-xs p-1 bg-orange-200 border-2 border-white rounded-lg">Goals: <span id="goals">0</span></p>
             <p class="text-xs p-1 bg-orange-200 border-2 border-white rounded-lg">Time: <span id="time">90</span>
@@ -38,7 +38,7 @@
         </div>
         <div class="w-1/2 flex flex-col">
             <button id="start-game"
-                class="py-4 px-4 bg-blue-300 text-black font-mono text-xs font-bold rounded-md shadow-md mt-3  mr-7 hover:bg-blue-500 hover:text-white">Start
+                class="py-2 px-4 bg-blue-300 text-black font-mono text-xs font-bold rounded-md shadow-md mt-3  mr-7 hover:bg-blue-500 hover:text-white">Start
                 Game</button>
             <div class="game-buttons-container-above grid grid-cols-2 md:grid-cols-4 gap-2  mr-7 mt-4">
                 <button
@@ -86,6 +86,22 @@
             class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
             Shoot
         </button>
+    </div>
+
+    <!-- Welcome Modal -->
+    <div id="welcome-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-1/2">
+            <p class="text-xl font-bold">Welcome to the XG Football Game!</p>
+            <p class="mt-2">Get ready to test your skills and strategy. Do you want to go to the game or read the rules?
+            </p>
+            <button id="close-welcome-modal"
+                class="mt-4 mb-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700">
+                Game
+            </button>
+            <a href="rules.html" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700">
+                Rules
+            </a>
+        </div>
     </div>
 
     <!-- Scripts -->
