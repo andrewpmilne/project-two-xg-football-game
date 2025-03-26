@@ -27,7 +27,7 @@
     </nav>
 
     <!-- Buttons and info section-->
-    <div id="info" class="flex w-full flex-row">
+    <div id="info" class="flex w-full flex-row max-h-[25vh]">
         <div class="w-1/2 flex flex-col flex-grow p-3 space-y-1">
             <p class="text-xs p-1 bg-orange-200 border-2 border-white rounded-lg">Goals: <span id="goals">0</span></p>
             <p class="text-xs p-1 bg-orange-200 border-2 border-white rounded-lg">Time: <span id="time">90</span>
@@ -40,7 +40,7 @@
             <button id="start-game"
                 class="w-full px-6 py-3 bg-blue-300 text-black font-mono text-xs font-bold rounded-md shadow-md mt-3 hover:bg-blue-500 hover:text-white">Start
                 Game</button>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 w-full mt-4">
+            <div class="game-buttons-container-above grid grid-cols-2 md:grid-cols-4 gap-2 w-full mt-4">
                 <button
                     class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
                     Long Pass
@@ -62,9 +62,30 @@
     </div>
 
     <!-- Playing area section-->
-    <div id="what" class="w-full flex flex-grow relative justify-center mt-4">
-        <img id="pitch" src="assets/images/pitch-image-two.jpg" alt="football pitch">
-        <img id="ball" class="absolute top-2/5" src="assets/images/football.jpg" alt="football">
+    <div class="pitch-container w-full flex relative justify-center mt-4">
+        <img id="pitch" class="pitch" src="assets/images/pitch-image-two.jpg" alt="football pitch">
+        <img id="ball" class="ball" src="assets/images/football.jpg" alt="football">
+    </div>
+
+    <!-- buttons to display on screens below 550px-->
+
+    <div class="game-buttons-container-below grid grid-cols-2 md:grid-cols-4 gap-2 w-full mt-4">
+        <button
+            class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
+            Long Pass
+        </button>
+        <button
+            class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
+            Short Pass
+        </button>
+        <button
+            class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
+            Dribble
+        </button>
+        <button
+            class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
+            Shoot
+        </button>
     </div>
 
     <!-- Scripts -->

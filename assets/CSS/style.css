@@ -1,10 +1,42 @@
-#ball {
+.ball {
+    position: absolute;
     width: 35px;
     height: 35px;
     left: 10%;
+    top: 43%;
 }
 
-#pitch {
+.pitch {
     width: 90%;
-    height: 300px
+    position: relative;
+    max-height: 70vh;
+    z-index: -1;
+}
+
+.game-buttons-container-below {
+    display: none;
+}
+
+/* media queries */
+@media (max-width: 550px) {
+
+    /* Show buttons below the pitch, hide buttons above the pitch on smaller screens */
+    .game-buttons-container-above {
+        display: none;
+    }
+
+    .game-buttons-container-below {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .game-buttons-container-below .game-button {
+        width: 85%;
+        margin-bottom: 10px;
+    }
 }
