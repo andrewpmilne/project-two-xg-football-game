@@ -1,26 +1,25 @@
 const startButton = document.getElementById("start-game");
 startButton.addEventListener("click", startGame);
 
-// Global Variables
+// Variables
+let goals = document.getElementById("goals").innerText
+let time = document.getElementById("time").innerText
+let distance = document.getElementById("distance").innerText
 let countdown;
 let choice = [];
+let buttons = document.getElementsByClassName('game-button');
 
 function startGame() {
     clearInterval(countdown);
     choice = [];
-    document.getElementById("goals").innerText = 0
-    document.getElementById("time").innerText = 90
-    document.getElementById("distance").innerText = 60
-
-    let buttons = document.getElementsByClassName('game-button');
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = false;
     }
+    let goals = 0
+    let time = 90
+    let distance = 60
+    document.getElementById("time").innerText = time;
 
-    // Loop through the HTMLCollection to access each element
-    for (let i = 0; i < items.length; i++) {
-        console.log(items[i].innerText); // Logs the text inside each element with class 'item'
-    }
 
     let timeRemaining = parseInt(document.getElementById("time").innerText);
 
