@@ -89,26 +89,30 @@ function compChoice(playerChoice) {
         return;
     }
 
-    choice.push(playerChoice);
-    if (choice.length === 7) {
+
+    let compDefence = '';
+    choice.unshift(playerChoice);
+    if (choice.length === 8) {
         choice.pop();
     }
-}
-// add more variable
-// how the computer decides its defence
-for (let item of possibleChoice) {
-    let count = 0;
 
-    for (let i = 0; i < choice.length; i++) {
-        if (choice[i] === item) {
-            count++;
+    // how the computer decides its defence - first check for patterns
+    for (let item of possibleChoice) {
+        let count = 0;
+
+        for (let i = 0; i < choice.length; i++) {
+            if (choice[i] === item) {
+                count++;
+            }
+        }
+        if (count >= 4) {
+            compDefence = item;
+            console.log(playerChoice);
+            console.log(compDefence);
+            resolve(playerChoice, compDefence);
+            return;
         }
     }
-    if (count === 3) {
-        console.log(`There are 3 identical items: ${item}`);
-        return true;
-    }
-
     /*
     // continue from here    else {
         const defenceChoice = '';
@@ -128,6 +132,19 @@ function shoot() {
 
 }
 
+function resolve(playerChoice, compDefence) {
+    if (playerChoice === compDefence) {
+        returnBall();
+    } else {
+        if (playerChoice === 'Long Pass') {
+            forwardTwo();
+        } else {
+            forwardOne();
+        }
+    }
+
+}
+
 function forwardOne() {
 
 }
@@ -137,5 +154,6 @@ function forwardTwo() {
 }
 
 function returnBall() {
+    console.log('back you go');
 
 }
