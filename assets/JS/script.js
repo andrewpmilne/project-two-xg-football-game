@@ -53,7 +53,6 @@ function startGame() {
     let distance = 60
     document.getElementById("time").innerText = time;
 
-
     let timeRemaining = parseInt(document.getElementById("time").innerText);
 
     countdown = setInterval(() => {
@@ -65,10 +64,15 @@ function startGame() {
             document.getElementById("goals-total").innerText = goals;
             gameEndModal.classList.remove("hidden");
             closeGameEndModal.addEventListener("click", function () {
-                gameEndModal.classList.add("hidden");
                 document.getElementById("goals").innerText = 0;
                 document.getElementById("time").innerText = 90;
-                document.getElementById("distane").innerText = 60;
+                document.getElementById("distance").innerText = 60;
+
+                for (let i = 0; i < buttons.length; i++) {
+                    buttons[i].disabled = true;
+                }
+
+                gameEndModal.classList.add("hidden");
             });
         }
     }, 1000);
@@ -76,6 +80,9 @@ function startGame() {
 
 function compChoice(playerChoice) {
     console.log(playerChoice);
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+    }
 }
 
 function shoot() {
