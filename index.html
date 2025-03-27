@@ -105,6 +105,24 @@
         </div>
     </div>
 
+    <!-- Game end modal -->
+    <div id="game-end-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-1/2">
+            <p class="text-xl font-bold">The full time whistle has blown!</p>
+            <p class="mt-2">You scored a total of <span id="goals-total"></span> goals.
+            </p>
+            <p class="mt-2">Now would you like to play another game or read the rules and learn about XG?
+            </p>
+            <button id="close-game-end-modal"
+                class="mt-4 mb-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700">
+                Game
+            </button>
+            <a href="rules.html" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700">
+                Rules
+            </a>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="assets/JS/script.js"></script>
     <!-- Footer -->

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const welcomeModal = document.getElementById("welcome-modal");
     const closeWelcomeModal = document.getElementById("close-welcome-modal");
-
+    console.log("working");
     if (!sessionStorage.getItem("modalShown")) {
         welcomeModal.classList.remove("hidden");
         sessionStorage.setItem("modalShown", "true");
@@ -17,14 +17,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// in game variables
 let goals = document.getElementById("goals").innerText
 let time = document.getElementById("time").innerText
 let distance = document.getElementById("distance").innerText
 let countdown;
 let choice = [];
-const buttons = document.getElementsByClassName('game-button');
 
+// game end variables
+const gameEndModal = document.getElementById("game-end-modal");
+const closeGameEndModal = document.getElementById("close-game-end-modal");
+
+// button variables
+const buttons = document.getElementsByClassName('game-button');
 const startButton = document.getElementById("start-game");
+
 startButton.addEventListener("click", startGame);
 
 for (let i = 0; i < buttons.length; i++) {
@@ -52,8 +59,12 @@ function startGame() {
             timeRemaining--;
             document.getElementById("time").innerText = timeRemaining;
         } else {
-            console.log("time is up")
             clearInterval(countdown);
+            document.getElementById("goals-total").innerText = goals;
+            gameEndModal.classList.remove("hidden");
+            closeGameEndModal.addEventListener("click", function () {
+                gameEndModal.classList.add("hidden");
+            });
         }
     }, 1000);
 }
