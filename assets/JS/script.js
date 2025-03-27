@@ -1,3 +1,4 @@
+// when page loaded event listener
 document.addEventListener("DOMContentLoaded", function () {
     const welcomeModal = document.getElementById("welcome-modal");
     const closeWelcomeModal = document.getElementById("close-welcome-modal");
@@ -31,6 +32,7 @@ const closeGameEndModal = document.getElementById("close-game-end-modal");
 const buttons = document.getElementsByClassName('game-button');
 const startButton = document.getElementById("start-game");
 
+// buttons event listener
 startButton.addEventListener("click", startGame);
 
 for (let i = 0; i < buttons.length; i++) {
@@ -39,6 +41,7 @@ for (let i = 0; i < buttons.length; i++) {
     });
 }
 
+// function to run on start button pressed
 function startGame() {
     clearInterval(countdown);
     choice = [];
@@ -63,6 +66,9 @@ function startGame() {
             gameEndModal.classList.remove("hidden");
             closeGameEndModal.addEventListener("click", function () {
                 gameEndModal.classList.add("hidden");
+                document.getElementById("goals").innerText = 0;
+                document.getElementById("time").innerText = 90;
+                document.getElementById("distane").innerText = 60;
             });
         }
     }, 1000);
