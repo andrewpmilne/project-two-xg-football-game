@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const welcomeModal = document.getElementById("welcome-modal");
     const closeWelcomeModal = document.getElementById("close-welcome-modal");
-    console.log("working");
     if (!sessionStorage.getItem("modalShown")) {
         welcomeModal.classList.remove("hidden");
         sessionStorage.setItem("modalShown", "true");
@@ -70,9 +69,7 @@ function startGame() {
 }
 
 function compChoice(playerChoice) {
-    console.log("hello2");
     console.log(playerChoice);
-
 }
 
 function shoot() {
