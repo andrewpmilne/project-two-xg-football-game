@@ -23,6 +23,7 @@ let time = document.getElementById("time").innerText
 let distance = document.getElementById("distance").innerText
 let countdown;
 let choice = [];
+const possibleChoice = ['Long Pass', 'Short Pass', 'Dribble'];
 
 // game end variables
 const gameEndModal = document.getElementById("game-end-modal");
@@ -79,11 +80,45 @@ function startGame() {
 }
 
 function compChoice(playerChoice) {
-    console.log(playerChoice);
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = true;
     }
+
+    if (playerChoice === 'Shoot') {
+        shoot();
+        return;
+    }
+
+    choice.push(playerChoice);
+    if (choice.length === 7) {
+        choice.pop();
+    }
 }
+// add more variable
+// how the computer decides its defence
+for (let item of possibleChoice) {
+    let count = 0;
+
+    for (let i = 0; i < choice.length; i++) {
+        if (choice[i] === item) {
+            count++;
+        }
+    }
+
+    /*
+    // continue from here    else {
+        const defenceChoice = '';
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        if 
+        if (randomNumber <=25) {
+            let defenceChoice = 'Short Pass';
+        } else if (randomNumber > 25 && <= 50) { 
+            let defenceChoice = 'Dribble';
+        }
+    }
+*/
+}
+
 
 function shoot() {
 
