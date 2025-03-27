@@ -104,6 +104,10 @@ for (let item of possibleChoice) {
             count++;
         }
     }
+    if (count === 3) {
+        console.log(`There are 3 identical items: ${item}`);
+        return true;
+    }
 
     /*
     // continue from here    else {
