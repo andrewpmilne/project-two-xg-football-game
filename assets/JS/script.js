@@ -107,24 +107,22 @@ function compChoice(playerChoice) {
         }
         if (count >= 4) {
             compDefence = item;
-            console.log(playerChoice);
-            console.log(compDefence);
             resolve(playerChoice, compDefence);
             return;
         }
     }
-    /*
-    // continue from here    else {
-        const defenceChoice = '';
-        const randomNumber = Math.floor(Math.random() * 100) + 1;
-        if 
-        if (randomNumber <=25) {
-            let defenceChoice = 'Short Pass';
-        } else if (randomNumber > 25 && <= 50) { 
-            let defenceChoice = 'Dribble';
-        }
+
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    if (randomNumber <= 20) {
+        compDefence = 'Short Pass';
+    } else if (randomNumber > 20 && randomNumber <= 40) {
+        compDefence = 'Dribble';
+    } else if (randomNumber > 40 && randomNumber <= 80) {
+        compDefence = 'Long Pass';
+    } else {
+        compDefence = 'No Defence';
     }
-*/
+    resolve(playerChoice, compDefence);
 }
 
 
@@ -154,6 +152,5 @@ function forwardTwo() {
 }
 
 function returnBall() {
-    console.log('back you go');
 
 }
