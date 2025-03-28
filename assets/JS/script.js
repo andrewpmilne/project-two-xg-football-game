@@ -43,6 +43,10 @@ for (let i = 0; i < buttons.length; i++) {
 function startGame() {
     clearInterval(countdown);
     choice = [];
+    const crowdAudio = new Audio("../assets/sounds/general-crowd-background.mp3");
+    crowdAudio.volume = 0.5;
+    crowdAudio.play();
+
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = false;
     }
@@ -123,12 +127,14 @@ function compChoice(playerChoice) {
 
 
 function shoot() {
+    const goalAudio = new Audio("../assets/sounds/goal.mp3");
     const shotPosition = parseInt(document.getElementById("distance").innerText);
     let goals = parseInt(document.getElementById("goals").innerText);
     const shotRandomNumber = Math.floor(Math.random() * 100) + 1;
 
     if (shotPosition === 60) {
         if (shotRandomNumber < 2) {
+            goalAudio.play();
             goals = goals + 1;
             document.getElementById("goals").innerText = goals;
             returnBall();
@@ -140,6 +146,7 @@ function shoot() {
         }
     } else if (shotPosition === 40) {
         if (shotRandomNumber < 6) {
+            goalAudio.play();
             goals = goals + 1;
             document.getElementById("goals").innerText = goals;
             returnBall();
@@ -151,6 +158,7 @@ function shoot() {
         }
     } else if (shotPosition === 20) {
         if (shotRandomNumber < 15) {
+            goalAudio.play();
             goals = goals + 1;
             document.getElementById("goals").innerText = goals;
             returnBall();
@@ -162,6 +170,7 @@ function shoot() {
         }
     } else if (shotPosition === 10) {
         if (shotRandomNumber < 50) {
+            goalAudio.play();
             goals = goals + 1;
             document.getElementById("goals").innerText = goals;
             returnBall();
@@ -173,6 +182,7 @@ function shoot() {
         }
     } else if (shotPosition === 1) {
         if (shotRandomNumber < 85) {
+            goalAudio.play();
             goals = goals + 1;
             document.getElementById("goals").innerText = goals;
             returnBall();
