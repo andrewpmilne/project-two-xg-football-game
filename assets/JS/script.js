@@ -138,6 +138,50 @@ function shoot() {
             returnBall();
             return
         }
+    } else if (shotPosition === 40) {
+        if (shotRandomNumber < 6) {
+            goals = goals + 1;
+            document.getElementById("goals").innerText = goals;
+            returnBall();
+            return
+        } else {
+            console.log("no goal");
+            returnBall();
+            return
+        }
+    } else if (shotPosition === 20) {
+        if (shotRandomNumber < 15) {
+            goals = goals + 1;
+            document.getElementById("goals").innerText = goals;
+            returnBall();
+            return
+        } else {
+            console.log("no goal");
+            returnBall();
+            return
+        }
+    } else if (shotPosition === 10) {
+        if (shotRandomNumber < 50) {
+            goals = goals + 1;
+            document.getElementById("goals").innerText = goals;
+            returnBall();
+            return
+        } else {
+            console.log("no goal");
+            returnBall();
+            return
+        }
+    } else if (shotPosition === 1) {
+        if (shotRandomNumber < 85) {
+            goals = goals + 1;
+            document.getElementById("goals").innerText = goals;
+            returnBall();
+            return
+        } else {
+            console.log("no goal");
+            returnBall();
+            return
+        }
     }
 }
 
