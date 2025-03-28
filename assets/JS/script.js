@@ -18,9 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // in game variables
-let goals = document.getElementById("goals").innerText
-let time = document.getElementById("time").innerText
-let distance = document.getElementById("distance").innerText
 let countdown;
 let choice = [];
 const possibleChoice = ['Long Pass', 'Short Pass', 'Dribble'];
@@ -49,10 +46,9 @@ function startGame() {
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = false;
     }
-    let goals = 0
-    let time = 90
-    let distance = 60
-    document.getElementById("time").innerText = time;
+    document.getElementById("goals").innerText = 0;
+    document.getElementById("distance").innerText = 60;
+    document.getElementById("time").innerText = 90;
 
     let timeRemaining = parseInt(document.getElementById("time").innerText);
 
@@ -127,7 +123,22 @@ function compChoice(playerChoice) {
 
 
 function shoot() {
+    const shotPosition = parseInt(document.getElementById("distance").innerText);
+    let goals = parseInt(document.getElementById("goals").innerText);
+    const shotRandomNumber = Math.floor(Math.random() * 100) + 1;
 
+    if (shotPosition === 60) {
+        if (shotRandomNumber < 2) {
+            goals = goals + 1;
+            document.getElementById("goals").innerText = goals;
+            returnBall();
+            return
+        } else {
+            console.log("no goal");
+            returnBall();
+            return
+        }
+    }
 }
 
 function resolve(playerChoice, compDefence) {
