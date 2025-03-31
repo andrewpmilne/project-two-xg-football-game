@@ -4,6 +4,7 @@
     height: 35px;
     left: 10%;
     top: 43%;
+    transition: left 1s ease-in-out;
 }
 
 .ball.invisible {

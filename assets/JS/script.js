@@ -85,15 +85,25 @@ function startGame() {
 
 // function to generate a defence choice by the computer opponent
 function compChoice(playerChoice) {
+    // check the button pressed is legal given the distance from goal.
+    if (playerChoice !== "Shoot" && document.getElementById("distance").innerText === "1") {
+        alert("You are so close to the goal! You need to shoot!");
+        return;
+    }
+    if (playerChoice === "Long Pass" && document.getElementById("distance").innerText === "10") {
+        alert("You are too close to the goal for a long pass. Try something different.");
+        return;
+    }
+    // disable buttons
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = true;
     }
 
+    //check if shoot has been pressed
     if (playerChoice === 'Shoot') {
         shoot();
         return;
     }
-
 
     let compDefence = '';
     choice.unshift(playerChoice);
@@ -212,6 +222,7 @@ function resolvePlay(playerChoice, compDefence) {
 }
 
 function forwardOne() {
+    console.log("working");
 
 }
 
@@ -237,6 +248,8 @@ async function returnBall() {
     }
 }
 
+
+// time delay function
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
