@@ -231,6 +231,9 @@ async function returnBall() {
 
     ball.classList.remove("invisible");
     ball.classList.add("visible");
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = false;
+    }
 }
 
 function sleep(ms) {
