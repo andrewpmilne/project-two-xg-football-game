@@ -229,6 +229,7 @@ async function returnBall() {
 
     await sleep(1000);
 
+    document.getElementById("distance").innerText = 60;
     ball.classList.remove("invisible");
     ball.classList.add("visible");
     for (let i = 0; i < buttons.length; i++) {
