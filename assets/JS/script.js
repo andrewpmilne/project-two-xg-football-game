@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // in game variables
+const ball = document.getElementById("ball");
 let countdown;
 let choice = [];
 const possibleChoice = ['Long Pass', 'Short Pass', 'Dribble'];
@@ -111,7 +112,7 @@ function compChoice(playerChoice) {
         }
         if (count >= 4) {
             compDefence = item;
-            resolve(playerChoice, compDefence);
+            resolvePlay(playerChoice, compDefence);
             return;
         }
     }
@@ -127,7 +128,7 @@ function compChoice(playerChoice) {
     } else {
         compDefence = 'No Defence';
     }
-    resolve(playerChoice, compDefence);
+    resolvePlay(playerChoice, compDefence);
 }
 
 // function to run if shot button is pressed at any time
@@ -197,7 +198,7 @@ function shoot() {
 }
 
 // function to resolve the player move
-function resolve(playerChoice, compDefence) {
+function resolvePlay(playerChoice, compDefence) {
     if (playerChoice === compDefence) {
         returnBall();
     } else {
@@ -218,12 +219,20 @@ function forwardTwo() {
 
 }
 
-function returnBall() {
-    const ball = document.getElementById("ball");
+async function returnBall() {
     ball.classList.remove("visible");
     ball.classList.add("invisible");
-    setTimeout(function () {
-        ball.classList.remove("invisible");
-        ball.classList.add("visible");
-    }, 1700);
+
+    await sleep(800);
+
+    ball.style.left = '10%';
+
+    await sleep(1000);
+
+    ball.classList.remove("invisible");
+    ball.classList.add("visible");
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
