@@ -22,6 +22,9 @@ const ball = document.getElementById("ball");
 let countdown;
 let choice = [];
 const possibleChoice = ['Long Pass', 'Short Pass', 'Dribble'];
+let goals = document.getElementById("goals").innerText;
+let distance = document.getElementById("distance").innerText;
+let time = document.getElementById("time").innerText;
 
 // game end variables
 const gameEndModal = document.getElementById("game-end-modal");
@@ -67,7 +70,7 @@ function startGame() {
             document.getElementById("time").innerText = timeRemaining;
         } else {
             clearInterval(countdown);
-            document.getElementById("goals-total").innerText = goals;
+            document.getElementById("goals-total").innerText = document.getElementById("goals").innerText;
             gameEndModal.classList.remove("hidden");
             closeGameEndModal.addEventListener("click", function () {
                 document.getElementById("goals").innerText = 0;
@@ -247,7 +250,7 @@ async function forwardOne() {
         ball.style.left = "86%";
         document.getElementById("distance").innerText = 1;
     }
-    await sleep(1500);
+    await sleep(1100);
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = false;
     }
@@ -266,7 +269,7 @@ async function forwardTwo() {
         ball.style.left = "86%";
         document.getElementById("distance").innerText = 1;
     }
-    await sleep(1500);
+    await sleep(1100);
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = false;
     }
