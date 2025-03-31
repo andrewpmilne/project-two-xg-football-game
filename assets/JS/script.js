@@ -44,6 +44,8 @@ function startGame() {
     clearInterval(countdown);
     choice = [];
     const crowdAudio = new Audio("../assets/sounds/general-crowd-background.mp3");
+    const startWhistle = new Audio("../assets/sounds/start-whistle.mp3");
+    startWhistle.play();
     crowdAudio.volume = 0.5;
     crowdAudio.play();
 
@@ -144,7 +146,6 @@ function shoot() {
             returnBall();
             return
         } else {
-            console.log("no goal");
             returnBall();
             return
         }
@@ -156,7 +157,6 @@ function shoot() {
             returnBall();
             return
         } else {
-            console.log("no goal");
             returnBall();
             return
         }
@@ -168,7 +168,6 @@ function shoot() {
             returnBall();
             return
         } else {
-            console.log("no goal");
             returnBall();
             return
         }
@@ -180,7 +179,6 @@ function shoot() {
             returnBall();
             return
         } else {
-            console.log("no goal");
             returnBall();
             return
         }
@@ -192,7 +190,6 @@ function shoot() {
             returnBall();
             return
         } else {
-            console.log("no goal");
             returnBall();
             return
         }
@@ -222,5 +219,11 @@ function forwardTwo() {
 }
 
 function returnBall() {
-
+    const ball = document.getElementById("ball");
+    ball.classList.remove("visible");
+    ball.classList.add("invisible");
+    setTimeout(function () {
+        ball.classList.remove("invisible");
+        ball.classList.add("visible");
+    }, 1700);
 }

@@ -6,6 +6,18 @@
     top: 43%;
 }
 
+.ball.invisible {
+    opacity: 0;
+    transition: 0.8s;
+    ease-in-out
+}
+
+.ball.visible {
+    opacity: 1;
+    transition: 0.8s;
+    ease-in-out
+}
+
 .pitch {
     width: 90%;
     position: relative;
