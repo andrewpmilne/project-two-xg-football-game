@@ -154,10 +154,9 @@ async function shoot() {
         if (shotRandomNumber < 2) {
             goalAudio.play();
             ball.style.left = "90%";
-            document.getElementById("distance").innerText = 10;
             goals = goals + 1;
             document.getElementById("goals").innerText = goals;
-            sleep(1000);
+            await sleep(1500);
             returnBall();
             return
         } else {
@@ -170,7 +169,7 @@ async function shoot() {
             ball.style.left = "90%";
             goals = goals + 1;
             document.getElementById("goals").innerText = goals;
-            sleep(1000);
+            await sleep(1500);
             returnBall();
             return
         } else {
@@ -183,7 +182,7 @@ async function shoot() {
             ball.style.left = "90%";
             goals = goals + 1;
             document.getElementById("goals").innerText = goals;
-            sleep(1000);
+            await sleep(1500);
             returnBall();
             return
         } else {
@@ -196,7 +195,7 @@ async function shoot() {
             ball.style.left = "90%";
             goals = goals + 1;
             document.getElementById("goals").innerText = goals;
-            sleep(1000);
+            await sleep(1500);
             returnBall();
             return
         } else {
@@ -209,7 +208,7 @@ async function shoot() {
             ball.style.left = "90%";
             goals = goals + 1;
             document.getElementById("goals").innerText = goals;
-            sleep(1000);
+            await sleep(1500);
             returnBall();
             return
         } else {
@@ -233,30 +232,44 @@ function resolvePlay(playerChoice, compDefence) {
 
 }
 
-function forwardOne() {
-    console.log("working");
+async function forwardOne() {
     const movementStart = parseInt(document.getElementById("distance").innerText);
     if (movementStart === 60) {
         ball.style.left = "32%";
         document.getElementById("distance").innerText = 40;
     } else if (movementStart === 40) {
-        ball.style.left = "60%";
+        ball.style.left = "55%";
         document.getElementById("distance").innerText = 20;
     } else if (movementStart === 20) {
-        ball.style.left = "74%";
+        ball.style.left = "73%";
         document.getElementById("distance").innerText = 10;
     } else {
         ball.style.left = "86%";
         document.getElementById("distance").innerText = 1;
     }
+    await sleep(1500);
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = false;
     }
 }
 
 
-function forwardTwo() {
-
+async function forwardTwo() {
+    const movementStartLongPass = parseInt(document.getElementById("distance").innerText);
+    if (movementStartLongPass === 60) {
+        ball.style.left = "55%";
+        document.getElementById("distance").innerText = 20;
+    } else if (movementStartLongPass === 40) {
+        ball.style.left = "73%";
+        document.getElementById("distance").innerText = 10;
+    } else {
+        ball.style.left = "86%";
+        document.getElementById("distance").innerText = 1;
+    }
+    await sleep(1500);
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = false;
+    }
 }
 
 async function returnBall() {
