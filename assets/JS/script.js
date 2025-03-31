@@ -48,8 +48,8 @@ function startGame() {
     clearInterval(countdown);
     choice = [];
     ball.style.left = "10%";
-    const crowdAudio = new Audio("../assets/sounds/general-crowd-background.mp3");
-    const startWhistle = new Audio("../assets/sounds/start-whistle.mp3");
+    const crowdAudio = new Audio("assets/sounds/general-crowd-background.mp3");
+    const startWhistle = new Audio("assets/sounds/start-whistle.mp3");
     startWhistle.play();
     crowdAudio.volume = 0.5;
     crowdAudio.play();
