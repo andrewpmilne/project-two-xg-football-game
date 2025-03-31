@@ -44,6 +44,7 @@ for (let i = 0; i < buttons.length; i++) {
 function startGame() {
     clearInterval(countdown);
     choice = [];
+    ball.style.left = "10%";
     const crowdAudio = new Audio("../assets/sounds/general-crowd-background.mp3");
     const startWhistle = new Audio("../assets/sounds/start-whistle.mp3");
     startWhistle.play();
@@ -152,6 +153,8 @@ function shoot() {
     if (shotPosition === 60) {
         if (shotRandomNumber < 2) {
             goalAudio.play();
+            ball.style.left = "90%";
+            document.getElementById("distance").innerText = 10;
             goals = goals + 1;
             document.getElementById("goals").innerText = goals;
             returnBall();
@@ -163,6 +166,7 @@ function shoot() {
     } else if (shotPosition === 40) {
         if (shotRandomNumber < 6) {
             goalAudio.play();
+            ball.style.left = "90%";
             goals = goals + 1;
             document.getElementById("goals").innerText = goals;
             returnBall();
@@ -174,6 +178,7 @@ function shoot() {
     } else if (shotPosition === 20) {
         if (shotRandomNumber < 15) {
             goalAudio.play();
+            ball.style.left = "90%";
             goals = goals + 1;
             document.getElementById("goals").innerText = goals;
             returnBall();
@@ -185,6 +190,7 @@ function shoot() {
     } else if (shotPosition === 10) {
         if (shotRandomNumber < 50) {
             goalAudio.play();
+            ball.style.left = "90%";
             goals = goals + 1;
             document.getElementById("goals").innerText = goals;
             returnBall();
@@ -196,6 +202,7 @@ function shoot() {
     } else if (shotPosition === 1) {
         if (shotRandomNumber < 85) {
             goalAudio.play();
+            ball.style.left = "90%";
             goals = goals + 1;
             document.getElementById("goals").innerText = goals;
             returnBall();
@@ -223,8 +230,25 @@ function resolvePlay(playerChoice, compDefence) {
 
 function forwardOne() {
     console.log("working");
-
+    const movementStart = parseInt(document.getElementById("distance").innerText);
+    if (movementStart === 60) {
+        ball.style.left = "32%";
+        document.getElementById("distance").innerText = 40;
+    } else if (movementStart === 40) {
+        ball.style.left = "60%";
+        document.getElementById("distance").innerText = 20;
+    } else if (movementStart === 20) {
+        ball.style.left = "74%";
+        document.getElementById("distance").innerText = 10;
+    } else {
+        ball.style.left = "86%";
+        document.getElementById("distance").innerText = 1;
+    }
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = false;
+    }
 }
+
 
 function forwardTwo() {
 
@@ -236,9 +260,10 @@ async function returnBall() {
 
     await sleep(800);
 
+    ball.style.transition = "none"
     ball.style.left = '10%';
 
-    await sleep(1000);
+    await sleep(1500);
 
     document.getElementById("distance").innerText = 60;
     ball.classList.remove("invisible");
