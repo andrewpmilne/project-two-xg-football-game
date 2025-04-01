@@ -147,7 +147,7 @@ function compChoice(playerChoice) {
 
 // function to run if shot button is pressed at any time
 async function shoot() {
-    const goalAudio = new Audio("../assets/sounds/goal.mp3");
+    const goalAudio = new Audio("assets/sounds/goal.mp3");
     const shotPosition = parseInt(document.getElementById("distance").innerText);
     let goals = parseInt(document.getElementById("goals").innerText);
     const shotRandomNumber = Math.floor(Math.random() * 100) + 1;
