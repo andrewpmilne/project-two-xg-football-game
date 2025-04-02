@@ -30,6 +30,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-300: oklch(80.8% 0.114 19.571);
     --color-orange-200: oklch(90.1% 0.076 70.697);
     --color-lime-300: oklch(89.7% 0.196 126.665);
     --color-green-500: oklch(72.3% 0.219 149.579);
@@ -513,49 +514,6 @@
     @media (width >= 48rem) {
       flex-direction: row;
     }
-  }
-}
-.ball {
-  position: absolute;
-  width: 35px;
-  height: 35px;
-  left: 10%;
-  top: 43%;
-  transition: left 1s linear !important;
-}
-.ball.invisible {
-  opacity: 0;
-  transition: 0.8s;
-}
-.ball.visible {
-  opacity: 1;
-  transition: 0.8s;
-}
-.pitch {
-  width: 90%;
-  position: relative;
-  max-height: 70vh;
-  z-index: -1;
-}
-.game-buttons-container-below {
-  display: none;
-}
-@media (max-width: 550px) {
-  .game-buttons-container-above {
-    display: none;
-  }
-  .game-buttons-container-below {
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .game-buttons-container-below .game-button {
-    width: 85%;
-    margin-bottom: 10px;
   }
 }
 @property --tw-space-y-reverse {

@@ -3,13 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .ball {
     position: absolute;
     width: 35px;
     height: 35px;
     left: 10%;
     top: 43%;
-    transition: left 1s linear !important;
+    transition: left 1s linear !important
 }
 
 .ball.invisible {
@@ -54,5 +55,11 @@
     .game-buttons-container-below .game-button {
         width: 85%;
         margin-bottom: 10px;
+    }
+
+    /* change size of ball size */
+    .ball {
+        width: 20px;
+        height: 20px;
     }
 }
