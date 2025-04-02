@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/* @import "tailwindcss"; */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -43,7 +43,6 @@
     }
 
     .game-buttons-container-below {
-        margin-top: 20px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
