@@ -39,6 +39,12 @@ const startButton = document.getElementById("start-game");
 // buttons event listener
 startButton.addEventListener("click", startGame);
 
+// sounds
+const crowdAudio = new Audio("assets/sounds/general-crowd-background.mp3");
+const startWhistle = new Audio("assets/sounds/start-whistle.mp3");
+const endWhistle = new Audio("assets/sounds/full-time-whistle.mp3");
+const goalAudio = new Audio("assets/sounds/goal.mp3");
+
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function () {
         compChoice(buttons[i].innerText);
@@ -50,8 +56,6 @@ function startGame() {
     clearInterval(countdown);
     choice = [];
     ball.style.left = "10%";
-    const crowdAudio = new Audio("assets/sounds/general-crowd-background.mp3");
-    const startWhistle = new Audio("assets/sounds/start-whistle.mp3");
     startWhistle.play();
     crowdAudio.volume = 0.5;
     crowdAudio.play();
@@ -72,6 +76,7 @@ function startGame() {
             timeRemaining--;
             document.getElementById("time").innerText = timeRemaining;
         } else {
+            endWhistle.play();
             clearInterval(countdown);
             document.getElementById("goals-total").innerText = document.getElementById("goals").innerText;
             gameEndModal.classList.remove("hidden");
@@ -152,7 +157,6 @@ function compChoice(playerChoice) {
 
 // function to run if shot button is pressed at any time
 async function shoot() {
-    const goalAudio = new Audio("assets/sounds/goal.mp3");
     const shotPosition = parseInt(document.getElementById("distance").innerText);
     let goals = parseInt(document.getElementById("goals").innerText);
     const shotRandomNumber = Math.floor(Math.random() * 100) + 1;
