@@ -44,6 +44,7 @@ const crowdAudio = new Audio("assets/sounds/general-crowd-background.mp3");
 const startWhistle = new Audio("assets/sounds/start-whistle.mp3");
 const endWhistle = new Audio("assets/sounds/full-time-whistle.mp3");
 const goalAudio = new Audio("assets/sounds/goal.mp3");
+const missedShot = new Audio("assets/sounds/missed-shot.m4a");
 
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function () {
@@ -172,6 +173,7 @@ async function shoot() {
             returnBall();
             return
         } else {
+            missedShot.play();
             returnBall();
             return
         }
@@ -185,6 +187,7 @@ async function shoot() {
             returnBall();
             return
         } else {
+            missedShot.play();
             returnBall();
             return
         }
@@ -198,6 +201,7 @@ async function shoot() {
             returnBall();
             return
         } else {
+            missedShot.play();
             returnBall();
             return
         }
@@ -211,6 +215,7 @@ async function shoot() {
             returnBall();
             return
         } else {
+            missedShot.play();
             returnBall();
             return
         }
@@ -224,6 +229,7 @@ async function shoot() {
             returnBall();
             return
         } else {
+            missedShot.play();
             returnBall();
             return
         }
