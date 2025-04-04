@@ -13,7 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const buttons = document.getElementsByClassName('game-button');
     for (let i = 0; i < buttons.length; i++) {
+        console.log("hello");
         buttons[i].disabled = true;
+        buttons[i].classList.remove('hover:bg-green-500', 'hover:text-white');
     }
 });
 
@@ -56,6 +58,7 @@ function startGame() {
 
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = false;
+        buttons[i].classList.add('hover:bg-green-500', 'hover:text-white');
     }
     document.getElementById("goals").innerText = 0;
     document.getElementById("distance").innerText = 60;
@@ -79,6 +82,7 @@ function startGame() {
 
                 for (let i = 0; i < buttons.length; i++) {
                     buttons[i].disabled = true;
+                    buttons[i].classList.remove('hover:bg-green-500', 'hover:text-white');
                 }
 
                 gameEndModal.classList.add("hidden");
@@ -101,6 +105,7 @@ function compChoice(playerChoice) {
     // disable buttons
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = true;
+        buttons[i].classList.remove('hover:bg-green-500', 'hover:text-white');
     }
 
     //check if shoot has been pressed
@@ -253,6 +258,7 @@ async function forwardOne() {
     await sleep(1100);
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = false;
+        buttons[i].classList.add('hover:bg-green-500', 'hover:text-white');
     }
 }
 
@@ -272,6 +278,7 @@ async function forwardTwo() {
     await sleep(1100);
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = false;
+        buttons[i].classList.add('hover:bg-green-500', 'hover:text-white');
     }
 }
 
@@ -291,6 +298,7 @@ async function returnBall() {
     ball.classList.add("visible");
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = false;
+        buttons[i].classList.add('hover:bg-green-500', 'hover:text-white');
     }
 }
 
