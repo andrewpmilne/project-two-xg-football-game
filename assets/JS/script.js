@@ -46,6 +46,16 @@ const endWhistle = new Audio("assets/sounds/full-time-whistle.mp3");
 const goalAudio = new Audio("assets/sounds/goal.mp3");
 const missedShot = new Audio("assets/sounds/missed-shot.m4a");
 
+// event listener to stop sound if screen minimised
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+        crowdAudio.pause();
+    } else {
+        crowdAudio.play();
+    }
+});
+
+// event listener for buttons pressed.
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function () {
         compChoice(buttons[i].innerText);
@@ -65,6 +75,7 @@ function startGame() {
         buttons[i].disabled = false;
         buttons[i].classList.add('hover:bg-green-500', 'hover:text-white');
     }
+
     document.getElementById("goals").innerText = 0;
     document.getElementById("distance").innerText = 60;
     document.getElementById("time").innerText = 90;
