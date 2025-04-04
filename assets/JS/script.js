@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const buttons = document.getElementsByClassName('game-button');
     for (let i = 0; i < buttons.length; i++) {
-        console.log("hello");
         buttons[i].disabled = true;
         buttons[i].classList.remove('hover:bg-green-500', 'hover:text-white');
     }
@@ -88,24 +87,40 @@ function startGame() {
             timeRemaining--;
             document.getElementById("time").innerText = timeRemaining;
         } else {
-            endWhistle.play();
-            clearInterval(countdown);
-            document.getElementById("goals-total").innerText = document.getElementById("goals").innerText;
-            gameEndModal.classList.remove("hidden");
-            closeGameEndModal.addEventListener("click", function () {
-                document.getElementById("goals").innerText = 0;
-                document.getElementById("time").innerText = 90;
-                document.getElementById("distance").innerText = 60;
-
-                for (let i = 0; i < buttons.length; i++) {
-                    buttons[i].disabled = true;
-                    buttons[i].classList.remove('hover:bg-green-500', 'hover:text-white');
+            if (!isDocumentHidden()) {
+                endWhistle.play();
+            }
+            // Wait for the endWhistle to finish before stopping the crowdAudio
+            endWhistle.addEventListener('ended', function () {
+                crowdAudio.pause();
+                crowdAudio.currentTime = 0;
+                clearInterval(countdown);
+                document.getElementById("goals-total").innerText = document.getElementById("goals").innerText;
+                // ensure correct pluralisation
+                const pluralCheck = parseInt(document.getElementById("goals").innerText);
+                if (pluralCheck < 2) {
+                    document.getElementById("plural").innerText = "goal";
+                } else {
+                    document.getElementById("plural").innerText = "goals";
                 }
+                gameEndModal.classList.remove("hidden");
 
-                gameEndModal.classList.add("hidden");
+                closeGameEndModal.addEventListener("click", function () {
+                    document.getElementById("goals").innerText = 0;
+                    document.getElementById("time").innerText = 90;
+                    document.getElementById("distance").innerText = 60;
+
+                    for (let i = 0; i < buttons.length; i++) {
+                        buttons[i].disabled = true;
+                        buttons[i].classList.remove('hover:bg-green-500', 'hover:text-white');
+                    }
+
+                    gameEndModal.classList.add("hidden");
+                });
             });
         }
     }, 1000);
+
 }
 
 // function to generate a defence choice by the computer opponent
@@ -327,4 +342,9 @@ async function returnBall() {
 // time delay function
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// check document is on screen function
+function isDocumentHidden() {
+    return document.hidden || document.visibilityState === 'hidden';
 }
