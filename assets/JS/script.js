@@ -197,11 +197,11 @@ async function shoot() {
             document.getElementById("goals").innerText = goals;
             await sleep(1500);
             returnBall();
-            return
+            return;
         } else {
             missedShot.play();
             returnBall();
-            return
+            return;
         }
     } else if (shotPosition === 40) {
         if (shotRandomNumber < 6) {
@@ -211,11 +211,11 @@ async function shoot() {
             document.getElementById("goals").innerText = goals;
             await sleep(1500);
             returnBall();
-            return
+            return;
         } else {
             missedShot.play();
             returnBall();
-            return
+            return;
         }
     } else if (shotPosition === 20) {
         if (shotRandomNumber < 15) {
@@ -225,11 +225,11 @@ async function shoot() {
             document.getElementById("goals").innerText = goals;
             await sleep(1500);
             returnBall();
-            return
+            return;
         } else {
             missedShot.play();
             returnBall();
-            return
+            return;
         }
     } else if (shotPosition === 10) {
         if (shotRandomNumber < 50) {
@@ -239,11 +239,11 @@ async function shoot() {
             document.getElementById("goals").innerText = goals;
             await sleep(1500);
             returnBall();
-            return
+            return;
         } else {
             missedShot.play();
             returnBall();
-            return
+            return;
         }
     } else if (shotPosition === 1) {
         if (shotRandomNumber < 85) {
@@ -253,11 +253,11 @@ async function shoot() {
             document.getElementById("goals").innerText = goals;
             await sleep(1500);
             returnBall();
-            return
+            return;
         } else {
             missedShot.play();
             returnBall();
-            return
+            return;
         }
     }
 }
@@ -324,7 +324,7 @@ async function returnBall() {
 
     await sleep(800);
 
-    ball.style.transition = "none"
+    ball.style.transition = "none";
     ball.style.left = '10%';
 
     await sleep(1500);
