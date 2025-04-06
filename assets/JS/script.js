@@ -49,7 +49,7 @@ const missedShot = new Audio("assets/sounds/missed-shot.m4a");
 document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
         crowdAudio.pause();
-    } else {
+    } else if (parseInt(document.getElementById("time").innerText) < 90) {
         crowdAudio.play();
     }
 });
