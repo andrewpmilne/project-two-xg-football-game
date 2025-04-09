@@ -57,9 +57,10 @@ This website inlcudes a number of features to reach the aims of teaching about X
 ## Technologies Used ##
 
 ## Credits ##
-
+<a href="https://www.flaticon.com/free-icons/soccer" title="soccer icons">Soccer icons created by mavadee - Flaticon</a>
+s
 ## Thanks ##
 
 
 
-<a href="https://www.flaticon.com/free-icons/soccer" title="soccer icons">Soccer icons created by mavadee - Flaticon</a>
+
