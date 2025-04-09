@@ -42,6 +42,24 @@ This website inlcudes a number of features to reach the aims of teaching about X
 
 ### End Game Modal ###
 
+### Features left to Implement ###
+
+## Design ##
+
+## Testing ##
+
+## Bugs ##
+
+## Validation ##
+
+## Deployment ##
+
+## Technologies Used ##
+
+## Credits ##
+
+## Thanks ##
+
 
 
 <a href="https://www.flaticon.com/free-icons/soccer" title="soccer icons">Soccer icons created by mavadee - Flaticon</a>
