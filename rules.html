@@ -4,13 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags for search engines-->
+    <meta name="description"
+        content="XG Football game. A fun, exciting and luck-based game to introduce and teach the concepts of XG in football.">
+    <meta name="keywords" content="football, soccer, XG, gaming, football game, soccer game, football data">
+
+    <!-- style sheets-->
     <link rel="stylesheet" href="assets/css/output.css">
     <link href="assets/css/style.css" rel="stylesheet">
 
     <!-- favicon -->
     <link rel="icon" href="assets/images/football-favicon.png" type="image/png">
 
-    <title>The XG football game</title>
+    <title>The XG football game - Rules</title>
 </head>
 
 <body class="max-h-screen bg-gray-100 flex flex-col">
@@ -30,14 +36,15 @@
     </nav>
 
     <!-- main -->
-    <div class="w-full flex flex-col items-center overflow-y-auto p-6">
-        <!-- Heading Section (Centered and Styled) -->
+    <main class="w-full flex flex-col items-center overflow-y-auto p-6">
+        <!-- Heading Section -->
         <h1 class="text-4xl font-mono font-bold text-center mt-2 text-gray-800">
             Football XG Game
         </h1>
 
-        <!-- Container Div with Article and Aside -->
-        <div class="flex w-full max-w-screen-lg px-6 space-x-8 flex-col md:flex-row">
+
+        <section class="flex w-full max-w-screen-lg px-6 space-x-8 flex-col md:flex-row">
+
             <!-- Article Section -->
             <article class="w-full md:w-1/2 p-6 bg-orange-200 rounded-lg shadow-lg mt-6 mb-6">
                 <h2 class="text-2xl font-mono font-bold text-gray-800 mb-4 text-center">Rules</h2>
@@ -50,7 +57,8 @@
                     <li>If the computer is not successful, you advance closer to the goal.</li>
                     <li>A long pass will advance you further, but the computer is more likely to try and block this.
                     </li>
-                    <li>Don't be predictable... the computer will learn...</li>
+                    <li>Don't be predictable: the computer will learn. If you repeatedly press the same button the
+                        computer will defend against it.</li>
                     <li>When you shoot, there is a percentage chance it will go in. The closer you are to the goal the
                         better the percentage...</li>
                 </ul>
@@ -69,13 +77,19 @@
                     This premise has guided the probabilities in this game...
                 </p>
             </aside>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="w-full min-w-full max-h-[5vh] px-6 py-4 flex items-center bg-lime-300 mt-auto fixed bottom-0">
+    <footer class="w-full max-h-[5vh] px-6 py-4 flex items-center bg-lime-300 mt-auto fixed bottom-0">
         <p class="text-xs font-mono font-bold flex-1 text-left">XG Football Game</p>
-        <p class="text-xs font-mono font-bold text-right">© Andrew Milne 2025</p>
+        <p class="flex-1 text-xs font-mono font-bold text-left">©
+            Andrew Milne 2025</p>
+        <a href="https://github.com/andrewpmilne" target="_blank"
+            aria-label="Have a look at my github account(opens in new tab)" rel="noopener"
+            class="text-xs font-mono text-right px-2 py-2 bg-white text-black rounded-md shadow-md border border-black hover:bg-gray-300 hover:text-blue-700">
+            My Github
+        </a>
     </footer>
 </body>
 

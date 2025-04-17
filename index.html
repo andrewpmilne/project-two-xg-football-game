@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags for search engines-->
+    <meta name="description"
+        content="XG Football game. A fun, exciting and luck-based game to introduce and teach the concepts of XG in football.">
+    <meta name="keywords" content="football, soccer, XG, gaming, football game, soccer game, football data">
+
+    <!-- style sheets-->
     <link rel="stylesheet" href="assets/css/output.css">
     <link href="assets/css/style.css" rel="stylesheet">
 
@@ -29,67 +35,71 @@
         </div>
     </nav>
 
-    <!-- Buttons and info section-->
-    <div id="info" class="flex w-full flex-row max-h-[26vh]">
-        <div class="w-1/2 flex flex-col flex-grow p-3 space-y-1">
-            <p class="text-xs p-1 bg-orange-200 border-2 border-white rounded-lg">Goals: <span id="goals">0</span></p>
-            <p class="text-xs p-1 bg-orange-200 border-2 border-white rounded-lg">Time: <span id="time">90</span>
-                seconds</p>
-            <p class="text-xs p-1 bg-orange-200 border-2 border-white rounded-lg">Distance to goal: <span
-                    id="distance">60</span>m
-            </p>
-        </div>
-        <div class="w-1/2 flex flex-col">
-            <button id="start-game"
-                class="py-2 px-4 bg-blue-300 text-black font-mono text-xs font-bold rounded-md shadow-md mt-3  mr-7 hover:bg-blue-500 hover:text-white">Start
-                Game</button>
-            <div class="game-buttons-container-above grid grid-cols-2 md:grid-cols-4 gap-2  mr-7 mt-4">
-                <button
-                    class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
-                    Long Pass
-                </button>
-                <button
-                    class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
-                    Short Pass
-                </button>
-                <button
-                    class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
-                    Dribble
-                </button>
-                <button
-                    class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
-                    Shoot
-                </button>
+    <!-- main -->
+    <main>
+        <!-- Buttons and info section-->
+        <section id="info" class="flex w-full flex-row max-h-[26vh]">
+            <div class="w-1/2 flex flex-col flex-grow p-3 space-y-1">
+                <p class="text-xs p-1 bg-orange-200 border-2 border-white rounded-lg">Goals: <span id="goals">0</span>
+                </p>
+                <p class="text-xs p-1 bg-orange-200 border-2 border-white rounded-lg">Time: <span id="time">90</span>
+                    seconds</p>
+                <p class="text-xs p-1 bg-orange-200 border-2 border-white rounded-lg">Distance to goal: <span
+                        id="distance">60</span>m
+                </p>
             </div>
-        </div>
-    </div>
+            <div class="w-1/2 flex flex-col">
+                <button id="start-game"
+                    class="py-2 px-4 bg-blue-300 text-black font-mono text-xs font-bold rounded-md shadow-md mt-3  mr-7 hover:bg-blue-500 hover:text-white">Start
+                    Game</button>
+                <div class="game-buttons-container-above grid grid-cols-2 md:grid-cols-4 gap-2  mr-7 mt-4">
+                    <button
+                        class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
+                        Long Pass
+                    </button>
+                    <button
+                        class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
+                        Short Pass
+                    </button>
+                    <button
+                        class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
+                        Dribble
+                    </button>
+                    <button
+                        class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
+                        Shoot
+                    </button>
+                </div>
+            </div>
+        </section>
 
-    <!-- Playing area section-->
-    <div class="pitch-container w-full flex relative justify-center mt-4 max-h-[58vh]">
-        <img id="pitch" class="pitch" src="assets/images/pitch-image-two.jpg" alt="football pitch">
-        <img id="ball" class="ball invisible visible" src="assets/images/football.jpg" alt="football">
-    </div>
+        <!-- Playing area section-->
+        <section class="pitch-container w-full flex relative justify-center mt-4 max-h-[58vh]">
+            <img id="pitch" class="pitch" src="assets/images/pitch-image-two.jpg" alt="football pitch">
+            <img id="ball" class="ball invisible visible" src="assets/images/football.jpg" alt="football">
+        </section>
 
-    <!-- buttons to display on screens below 550px-->
+        <!-- buttons to display on screens below 550px-->
 
-    <div class="game-buttons-container-below grid grid-cols-2 md:grid-cols-4 gap-2 w-full mt-4">
-        <button
-            class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
-            Long Pass
-        </button>
-        <button
-            class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
-            Short Pass
-        </button>
-        <button
-            class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
-            Dribble
-        </button>
-        <button
-            class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
-            Shoot
-        </button>
-    </div>
+        <section class="game-buttons-container-below grid grid-cols-2 md:grid-cols-4 gap-2 w-full mt-4">
+            <button
+                class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
+                Long Pass
+            </button>
+            <button
+                class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
+                Short Pass
+            </button>
+            <button
+                class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
+                Dribble
+            </button>
+            <button
+                class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white">
+                Shoot
+            </button>
+        </section>
+    </main>
 
     <!-- Welcome Modal -->
     <div id="welcome-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
@@ -126,13 +136,21 @@
         </div>
     </div>
 
+
+    <!-- Footer -->
+    <footer class="w-full max-h-[5vh] px-6 py-4 flex items-center bg-lime-300 mt-auto fixed bottom-0">
+        <p class="text-xs font-mono font-bold flex-1 text-left">XG Football Game</p>
+        <p class="flex-1 text-xs font-mono font-bold text-left">©
+            Andrew Milne 2025</p>
+        <a href="https://github.com/andrewpmilne" target="_blank"
+            aria-label="Have a look at my github account(opens in new tab)" rel="noopener"
+            class="text-xs font-mono text-right px-2 py-2 bg-white text-black rounded-md shadow-md border border-black hover:bg-gray-300 hover:text-blue-700">
+            My Github
+        </a>
+    </footer>
     <!-- Scripts -->
     <script src="assets/JS/script.js"></script>
-    <!-- Footer -->
-    <footer class="w-full min-w-full max-h-[5vh] px-6 py-4 flex items-center bg-lime-300 mt-auto fixed bottom-0">
-        <p class="text-xs font-mono font-bold flex-1 text-left">XG Football Game</p>
-        <p class="text-xs font-mono font-bold text-right">© Andrew Milne 2025</p>
-    </footer>
+
 </body>
 
 </html>
