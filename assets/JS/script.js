@@ -197,6 +197,7 @@ async function shoot() {
             return;
         } else {
             missedShot.play();
+            document.getElementById("commentary").innerText = `"You'll never score from that far out!"`;
             returnBall();
             return;
         }
@@ -206,6 +207,7 @@ async function shoot() {
             return;
         } else {
             missedShot.play();
+            document.getElementById("commentary").innerText = `"Very little chance of that going in."`;
             returnBall();
             return;
         }
@@ -215,6 +217,7 @@ async function shoot() {
             return;
         } else {
             missedShot.play();
+            document.getElementById("commentary").innerText = `"Ooooh! Close but still too far out."`;
             returnBall();
             return;
         }
@@ -224,6 +227,7 @@ async function shoot() {
             return;
         } else {
             missedShot.play();
+            document.getElementById("commentary").innerText = `"Oh! Bad luck but it's missed."`;
             returnBall();
             return;
         }
@@ -233,6 +237,7 @@ async function shoot() {
             return;
         } else {
             missedShot.play();
+            document.getElementById("commentary").innerText = `"Oh no! You've missed a brilliant chance!"`;
             returnBall();
             return;
         }
@@ -251,7 +256,6 @@ function resolvePlay(playerChoice, compDefence) {
             forwardOne();
         }
     }
-
 }
 
 async function forwardOne() {
@@ -279,7 +283,6 @@ async function forwardOne() {
         buttons[i].classList.add('hover:bg-green-500', 'hover:text-white');
     }
 }
-
 
 async function forwardTwo() {
     const movementStartLongPass = parseInt(document.getElementById("distance").innerText);
@@ -328,7 +331,7 @@ async function returnBall() {
     document.getElementById("distance").innerText = 60;
     ball.classList.remove("invisible");
     ball.classList.add("visible");
-    document.getElementById("commentary").innerText = `"Time for another atack..."`;
+    document.getElementById("commentary").innerText = `"Time for another attack..."`;
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = false;
         buttons[i].classList.add('hover:bg-green-500', 'hover:text-white');
