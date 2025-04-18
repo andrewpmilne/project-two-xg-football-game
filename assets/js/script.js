@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     closeWelcomeModal.addEventListener("click", function () {
         welcomeModal.classList.add("hidden");
     });
-
     const buttons = document.getElementsByClassName('game-button');
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = true;
@@ -83,7 +82,6 @@ function startGame() {
 
     // create time countdown
     let timeRemaining = parseInt(time.innerText);
-
     countdown = setInterval(() => {
         if (timeRemaining > 0) {
             timeRemaining--;
@@ -117,13 +115,11 @@ function startGame() {
                         buttons[i].disabled = true;
                         buttons[i].classList.remove('hover:bg-green-500', 'hover:text-white');
                     }
-
                     gameEndModal.classList.add("hidden");
                 });
             });
         }
     }, 1000);
-
 }
 
 // function to generate a defence choice by the computer opponent
@@ -148,7 +144,6 @@ function compChoice(playerChoice) {
         shoot();
         return;
     }
-
     let compDefence = '';
     choice.unshift(playerChoice);
     if (choice.length === 8) {
@@ -158,7 +153,6 @@ function compChoice(playerChoice) {
     // how the computer decides its defence - first check for patterns
     for (let item of possibleChoice) {
         let count = 0;
-
         for (let i = 0; i < choice.length; i++) {
             if (choice[i] === item) {
                 count++;
@@ -320,14 +314,10 @@ async function goal() {
 async function returnBall() {
     ball.classList.remove("visible");
     ball.classList.add("invisible");
-
     await sleep(800);
-
     ball.style.transition = "none";
     ball.style.left = '10%';
-
     await sleep(1500);
-
     distance.innerText = 60;
     ball.classList.remove("invisible");
     ball.classList.add("visible");
