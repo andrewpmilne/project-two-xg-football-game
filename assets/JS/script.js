@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = true;
         buttons[i].classList.remove('hover:bg-green-500', 'hover:text-white');
+        buttons[i].classList.add('disabled:bg-gray-400')
     }
 });
 

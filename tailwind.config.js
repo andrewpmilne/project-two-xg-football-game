@@ -3,10 +3,14 @@ module.exports = {
     content: [
         "./index.html",
         "./rules.html",
-        "./leaderboard.html",
         "./*.{html,js}",
         "./assets/js/**/*.{html,js}"
     ],
+    safelist: [
+        'bg-gray-400',
+        'disabled:bg-gray-400',
+    ],
+
     theme: {
         extend: {},
     },
