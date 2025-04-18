@@ -39,16 +39,18 @@
     <main>
         <!-- Buttons and info section-->
         <section id="info" class="flex w-full flex-row max-h-[26vh]">
-            <div class="w-1/2 flex flex-col flex-grow p-3 space-y-1">
-                <p class="text-xs p-1 bg-orange-200 border-2 border-white rounded-lg">Goals: <span id="goals">0</span>
+            <div class="w-1/2 flex flex-col flex-grow p-1 space-y-1">
+                <p class="text-xs font-mono p-1 bg-orange-200 border-2 border-white rounded-lg">Goals: <span
+                        id="goals">0</span>
                 </p>
-                <p class="text-xs p-1 bg-orange-200 border-2 border-white rounded-lg">Time: <span id="time">90</span>
+                <p class="text-xs font-mono p-1 bg-orange-200 border-2 border-white rounded-lg">Time: <span
+                        id="time">90</span>
                     seconds</p>
-                <p class="text-xs p-1 bg-orange-200 border-2 border-white rounded-lg">Distance to goal: <span
+                <p class="text-xs font-mono p-1 bg-orange-200 border-2 border-white rounded-lg">Distance to goal: <span
                         id="distance">60</span>m
                 </p>
             </div>
-            <div class="w-1/2 flex flex-col">
+            <div class="w-1/2 flex flex-col ml-4">
                 <button id="start-game"
                     class="py-2 px-4 bg-blue-300 text-black font-mono text-xs font-bold rounded-md shadow-md mt-3  mr-7 hover:bg-blue-500 hover:text-white">Start
                     Game</button>
@@ -71,6 +73,12 @@
                     </button>
                 </div>
             </div>
+            <p id="commentary"
+                class="text-xs text-center font-mono p-6 bg-orange-200 border-2 border-white rounded-lg mt-1 mr-3 w-55 h-25">
+                "And the
+                game
+                is about to begin..."
+            </p>
         </section>
 
         <!-- Playing area section-->

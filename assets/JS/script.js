@@ -27,6 +27,7 @@ const possibleChoice = ['Long Pass', 'Short Pass', 'Dribble'];
 let goals = document.getElementById("goals").innerText;
 let distance = document.getElementById("distance").innerText;
 let time = document.getElementById("time").innerText;
+let commentary = document.getElementById("commentary").innerText;
 
 // game end variables
 const gameEndModal = document.getElementById("game-end-modal");
@@ -79,6 +80,7 @@ function startGame() {
     document.getElementById("goals").innerText = 0;
     document.getElementById("distance").innerText = 60;
     document.getElementById("time").innerText = 90;
+    document.getElementById("commentary").innerText = `"The game has started!"`;
 
     // create time countdown
     let timeRemaining = parseInt(document.getElementById("time").innerText);
@@ -266,6 +268,7 @@ async function shoot() {
 // function to resolve the player move
 function resolvePlay(playerChoice, compDefence) {
     if (playerChoice === compDefence) {
+        document.getElementById("commentary").innerText = `"Bad luck! Intercepted."`;
         returnBall();
     } else {
         if (playerChoice === 'Long Pass') {
@@ -282,15 +285,19 @@ async function forwardOne() {
     if (movementStart === 60) {
         ball.style.left = "32%";
         document.getElementById("distance").innerText = 40;
+        document.getElementById("commentary").innerText = `"That's a lovely move forward..."`;
     } else if (movementStart === 40) {
         ball.style.left = "55%";
         document.getElementById("distance").innerText = 20;
+        document.getElementById("commentary").innerText = `"Oooh, great play by the attackers!"`;
     } else if (movementStart === 20) {
         ball.style.left = "73%";
         document.getElementById("distance").innerText = 10;
+        document.getElementById("commentary").innerText = `"They're getting in a good position now..."`;
     } else {
         ball.style.left = "86%";
         document.getElementById("distance").innerText = 1;
+        document.getElementById("commentary").innerText = `"Now it's time for a shot!!"`;
     }
     await sleep(1100);
     for (let i = 0; i < buttons.length; i++) {
@@ -305,12 +312,15 @@ async function forwardTwo() {
     if (movementStartLongPass === 60) {
         ball.style.left = "55%";
         document.getElementById("distance").innerText = 20;
+        document.getElementById("commentary").innerText = `"What a fantastic pass!"`;
     } else if (movementStartLongPass === 40) {
         ball.style.left = "73%";
         document.getElementById("distance").innerText = 10;
+        document.getElementById("commentary").innerText = `"It's a long ball into the box!"`;
     } else {
         ball.style.left = "86%";
         document.getElementById("distance").innerText = 1;
+        document.getElementById("commentary").innerText = `"So near! Surely they must score?!"`;
     }
     await sleep(1100);
     for (let i = 0; i < buttons.length; i++) {
@@ -333,6 +343,7 @@ async function returnBall() {
     document.getElementById("distance").innerText = 60;
     ball.classList.remove("invisible");
     ball.classList.add("visible");
+    document.getElementById("commentary").innerText = `"Time for another atack..."`;
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = false;
         buttons[i].classList.add('hover:bg-green-500', 'hover:text-white');
