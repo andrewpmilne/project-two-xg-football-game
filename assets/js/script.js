@@ -15,6 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
         buttons[i].classList.remove("hover:bg-green-500", "hover:text-white");
         buttons[i].classList.add("disabled:bg-gray-400")
     }
+    // event listener for buttons pressed.
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function () {
+            compChoice(buttons[i].innerText);
+        });
+    }
 });
 
 // in game variables
@@ -53,13 +59,6 @@ document.addEventListener("visibilitychange", () => {
         crowdAudio.play();
     }
 });
-
-// event listener for buttons pressed.
-for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", function () {
-        compChoice(buttons[i].innerText);
-    });
-}
 
 // function to run on start button pressed
 function startGame() {
@@ -140,11 +139,11 @@ function compChoice(playerChoice) {
     }
 
     //check if shoot has been pressed
-    if (playerChoice === 'Shoot') {
+    if (playerChoice === "Shoot") {
         shoot();
         return;
     }
-    let compDefence = '';
+    let compDefence = "";
     choice.unshift(playerChoice);
     if (choice.length === 8) {
         choice.pop();
@@ -316,7 +315,7 @@ async function returnBall() {
     ball.classList.add("invisible");
     await sleep(800);
     ball.style.transition = "none";
-    ball.style.left = '10%';
+    ball.style.left = "10%";
     await sleep(1500);
     distance.innerText = 60;
     ball.classList.remove("invisible");
