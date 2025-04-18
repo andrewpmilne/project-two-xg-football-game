@@ -60,7 +60,9 @@ document.addEventListener("visibilitychange", () => {
     }
 });
 
-// function to run on start button pressed
+/**
+ * Function to run on start button pressed
+ */
 function startGame() {
     clearInterval(countdown);
     choice = [];
@@ -69,6 +71,7 @@ function startGame() {
     crowdAudio.volume = 0.5;
     crowdAudio.play();
 
+    // enable buttons
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = false;
         buttons[i].classList.add("hover:bg-green-500", "hover:text-white");
@@ -110,6 +113,7 @@ function startGame() {
                     distance.innerText = 60;
                     commentary.innerText = `"And the game is about to begin..."`;
 
+                    // disable buttons
                     for (let i = 0; i < buttons.length; i++) {
                         buttons[i].disabled = true;
                         buttons[i].classList.remove("hover:bg-green-500", "hover:text-white");
@@ -121,7 +125,9 @@ function startGame() {
     }, 1000);
 }
 
-// function to generate a defence choice by the computer opponent
+/**
+ * Function to generate a defence choice by the computer opponent
+ */
 function compChoice(playerChoice) {
     // check the button pressed is legal given the distance from goal.
     if (playerChoice !== "Shoot" && distance.innerText === "1") {
@@ -143,13 +149,15 @@ function compChoice(playerChoice) {
         shoot();
         return;
     }
+
+    // add the player's choice to the array
     let compDefence = "";
     choice.unshift(playerChoice);
     if (choice.length === 8) {
         choice.pop();
     }
 
-    // how the computer decides its defence - first check for patterns
+    // how the computer decides its defence - first check the choice array
     for (let item of possibleChoice) {
         let count = 0;
         for (let i = 0; i < choice.length; i++) {
@@ -164,7 +172,7 @@ function compChoice(playerChoice) {
         }
     }
 
-    // then generate random defence
+    // then generate random defence if choice array not used
     const randomNumber = Math.floor(Math.random() * 100) + 1;
     if (randomNumber <= 20) {
         compDefence = "Short Pass";
@@ -178,7 +186,9 @@ function compChoice(playerChoice) {
     resolvePlay(playerChoice, compDefence);
 }
 
-// function to run if shot button is pressed at any time
+/**
+ * Function to run if shot button pressed at any time
+ */
 async function shoot() {
     const shotPosition = parseInt(distance.innerText);
     const shotRandomNumber = Math.floor(Math.random() * 100) + 1;
@@ -237,7 +247,9 @@ async function shoot() {
     }
 }
 
-// function to resolve the player move
+/**
+ * Function to resolve the player move
+ */
 function resolvePlay(playerChoice, compDefence) {
     if (playerChoice === compDefence) {
         commentary.innerText = `"Bad luck! Intercepted."`;
@@ -251,6 +263,9 @@ function resolvePlay(playerChoice, compDefence) {
     }
 }
 
+/**
+ * Function to move ball forward one
+ */
 async function forwardOne() {
     const movementStart = parseInt(distance.innerText);
     if (movementStart === 60) {
@@ -277,6 +292,9 @@ async function forwardOne() {
     }
 }
 
+/**
+ * Function to move ball forward two
+ */
 async function forwardTwo() {
     const movementStartLongPass = parseInt(distance.innerText);
     if (movementStartLongPass === 60) {
@@ -299,6 +317,9 @@ async function forwardTwo() {
     }
 }
 
+/**
+ * Function to run on goal scored
+ */
 async function goal() {
     let goalsUpdate = parseInt(goals.innerText);
     goalAudio.play();
@@ -310,6 +331,9 @@ async function goal() {
     returnBall();
 }
 
+/**
+ * Function to return the ball to the starting position
+ */
 async function returnBall() {
     ball.classList.remove("visible");
     ball.classList.add("invisible");
@@ -327,12 +351,16 @@ async function returnBall() {
     }
 }
 
-// time delay function
+/**
+ * Function to add pauses when required
+ */
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// check document is on screen function
+/**
+ * Function to check if document is hidden
+ */
 function isDocumentHidden() {
     return document.hidden || document.visibilityState === "hidden";
 }
