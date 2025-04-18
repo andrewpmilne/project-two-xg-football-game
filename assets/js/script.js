@@ -76,13 +76,13 @@ function startGame() {
         buttons[i].classList.add('hover:bg-green-500', 'hover:text-white');
     }
 
-    document.getElementById("goals").innerText = 0;
-    document.getElementById("distance").innerText = 60;
-    document.getElementById("time").innerText = 90;
-    document.getElementById("commentary").innerText = `"The game has started!"`;
+    goals.innerText = 0;
+    distance.innerText = 60;
+    time.innerText = 90;
+    commentary.innerText = `"The game has started!"`;
 
     // create time countdown
-    let timeRemaining = parseInt(document.getElementById("time").innerText);
+    let timeRemaining = parseInt(time.innerText);
 
     countdown = setInterval(() => {
         if (timeRemaining > 0) {
