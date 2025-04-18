@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
         welcomeModal.classList.remove("hidden");
         sessionStorage.setItem("modalShown", "true");
     }
-
     closeWelcomeModal.addEventListener("click", function () {
         welcomeModal.classList.add("hidden");
     });
@@ -24,10 +23,10 @@ const ball = document.getElementById("ball");
 let countdown;
 let choice = [];
 const possibleChoice = ['Long Pass', 'Short Pass', 'Dribble'];
-let goals = document.getElementById("goals").innerText;
-let distance = document.getElementById("distance").innerText;
-let time = document.getElementById("time").innerText;
-let commentary = document.getElementById("commentary").innerText;
+const goals = document.getElementById("goals");
+const distance = document.getElementById("distance");
+const time = document.getElementById("time");
+const commentary = document.getElementById("commentary");
 
 // game end variables
 const gameEndModal = document.getElementById("game-end-modal");
@@ -338,7 +337,6 @@ async function returnBall() {
         buttons[i].classList.add('hover:bg-green-500', 'hover:text-white');
     }
 }
-
 
 // time delay function
 function sleep(ms) {
