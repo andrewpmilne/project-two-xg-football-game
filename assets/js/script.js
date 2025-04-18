@@ -73,7 +73,7 @@ soundButton.addEventListener('click', () => {
 document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
         crowdAudio.pause();
-    } else if (parseInt(document.getElementById("time").innerText) < 90) {
+    } else if (parseInt(document.getElementById("time").innerText) < 90 && soundOn) {
         crowdAudio.play();
     }
 });
