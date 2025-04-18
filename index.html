@@ -20,23 +20,24 @@
 </head>
 
 <body class="max-h-screen bg-gray-100 flex flex-col">
-
-    <nav class="w-full min-w-full max-h-[5vh] px-6 py-4 flex items-center bg-lime-300">
-        <p class="text-xs font-mono font-bold flex-1 text-center">Football XG Game</p>
-        <div class="flex gap-4 w-full justify-end">
-            <button id="sound" class="cursor-pointer" aria-label="Toggle sound">
-                🔇
-            </button>
-            <a href="index.html" aria-label="Play the game"
-                class="px-2 py-2 bg-white text-black rounded-md font-mono text-xs shadow-md border border-black hover:bg-gray-300 hover:text-blue-700">
-                Game
-            </a>
-            <a href="rules.html" aria-label="Read the rules"
-                class="px-2 py-2 bg-white text-black rounded-md font-mono text-xs shadow-md border border-black hover:bg-gray-300 hover:text-blue-700">
-                Rules
-            </a>
-        </div>
-    </nav>
+    <header>
+        <nav class="w-full min-w-full max-h-[5vh] px-6 py-4 flex items-center bg-lime-300">
+            <p class="text-xs font-mono font-bold flex-1 text-center">Football XG Game</p>
+            <div class="flex gap-4 w-full justify-end">
+                <button id="sound" class="cursor-pointer" aria-label="Toggle sound">
+                    🔇
+                </button>
+                <a href="index.html" aria-label="Play the game"
+                    class="px-2 py-2 bg-white text-black rounded-md font-mono text-xs shadow-md border border-black hover:bg-gray-300 hover:text-blue-700">
+                    Game
+                </a>
+                <a href="rules.html" aria-label="Read the rules"
+                    class="px-2 py-2 bg-white text-black rounded-md font-mono text-xs shadow-md border border-black hover:bg-gray-300 hover:text-blue-700">
+                    Rules
+                </a>
+            </div>
+        </nav>
+    </header>
 
     <!-- main -->
     <main>
@@ -91,7 +92,6 @@
         </section>
 
         <!-- buttons to display on screens below 550px-->
-
         <section class="game-buttons-container-below grid grid-cols-2 md:grid-cols-4 gap-2 w-full mt-4">
             <button
                 class="game-button px-4 py-2 bg-lime-300 text-black font-mono text-xs font-bold rounded-md shadow-md hover:bg-green-500 hover:text-white disabled:bg-gray-400">
@@ -148,7 +148,6 @@
         </div>
     </section>
 
-
     <!-- Footer -->
     <footer class="w-full max-h-[5vh] px-6 py-4 flex items-center bg-lime-300 mt-auto fixed bottom-0">
         <p class="text-xs font-mono font-bold flex-1 text-left">XG Football Game</p>
@@ -162,7 +161,6 @@
     </footer>
     <!-- Scripts -->
     <script src="assets/js/script.js"></script>
-
 </body>
 
 </html>

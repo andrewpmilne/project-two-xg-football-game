@@ -4,19 +4,25 @@
 document.addEventListener("DOMContentLoaded", function () {
     const welcomeModal = document.getElementById("welcome-modal");
     const closeWelcomeModal = document.getElementById("close-welcome-modal");
-    if (!sessionStorage.getItem("modalShown")) {
-        welcomeModal.classList.remove("hidden");
-        sessionStorage.setItem("modalShown", "true");
+    if (welcomeModal && closeWelcomeModal) {
+        if (!sessionStorage.getItem("modalShown")) {
+            welcomeModal.classList.remove("hidden");
+            sessionStorage.setItem("modalShown", "true");
+        }
+        closeWelcomeModal.addEventListener("click", function () {
+            welcomeModal.classList.add("hidden");
+        });
     }
-    closeWelcomeModal.addEventListener("click", function () {
-        welcomeModal.classList.add("hidden");
-    });
     const buttons = document.getElementsByClassName("game-button");
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = true;
         buttons[i].classList.remove("hover:bg-green-500", "hover:text-white");
         buttons[i].classList.add("disabled:bg-gray-400")
     }
+
+    // start button event listener
+    startButton.addEventListener("click", startGame);
+
     // event listener for buttons pressed.
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", function () {
@@ -43,15 +49,25 @@ const closeGameEndModal = document.getElementById("close-game-end-modal");
 const buttons = document.getElementsByClassName("game-button");
 const startButton = document.getElementById("start-game");
 
-// buttons event listener
-startButton.addEventListener("click", startGame);
-
 // sounds
 const crowdAudio = new Audio("assets/sounds/general-crowd-background.mp3");
 const startWhistle = new Audio("assets/sounds/start-whistle.mp3");
 const endWhistle = new Audio("assets/sounds/full-time-whistle.mp3");
 const goalAudio = new Audio("assets/sounds/goal.mp3");
 const missedShot = new Audio("assets/sounds/missed-shot.m4a");
+
+//toggle sound on and off
+const soundButton = document.getElementById('sound');
+let soundOn = localStorage.getItem('soundOn') === 'true';
+soundButton.textContent = soundOn ? '🔊' : '🔇';
+soundButton.setAttribute('aria-label', soundOn ? 'Sound on' : 'Sound off');
+
+soundButton.addEventListener('click', () => {
+    soundOn = !soundOn;
+    localStorage.setItem('soundOn', soundOn);
+    soundButton.textContent = soundOn ? '🔊' : '🔇';
+    soundButton.setAttribute('aria-label', soundOn ? 'Sound on' : 'Sound off');
+});
 
 // event listener to stop sound if screen minimised
 document.addEventListener("visibilitychange", () => {
@@ -66,12 +82,15 @@ document.addEventListener("visibilitychange", () => {
  * Function to run on start button pressed
  */
 function startGame() {
+    console.log("working");
     clearInterval(countdown);
     choice = [];
     ball.style.left = "10%";
-    startWhistle.play();
-    crowdAudio.volume = 0.5;
-    crowdAudio.play();
+    if (soundOn) {
+        startWhistle.play();
+        crowdAudio.volume = 0.5;
+        crowdAudio.play();
+    }
 
     // enable buttons
     for (let i = 0; i < buttons.length; i++) {
@@ -91,40 +110,49 @@ function startGame() {
             timeRemaining--;
             time.innerText = timeRemaining;
         } else {
-            if (!isDocumentHidden()) {
+            clearInterval(countdown);
+            if (!isDocumentHidden() && soundOn) {
                 endWhistle.play();
-            }
-            // Wait for the endWhistle to finish before stopping the crowdAudio
-            endWhistle.addEventListener("ended", function () {
-                crowdAudio.pause();
-                crowdAudio.currentTime = 0;
-                clearInterval(countdown);
-                document.getElementById("goals-total").innerText = goals.innerText;
-                // ensure correct pluralisation
-                const pluralCheck = parseInt(goals.innerText);
-                if (pluralCheck < 2) {
-                    document.getElementById("plural").innerText = "goal";
-                } else {
-                    document.getElementById("plural").innerText = "goals";
-                }
-                gameEndModal.classList.remove("hidden");
-
-                closeGameEndModal.addEventListener("click", function () {
-                    goals.innerText = 0;
-                    time.innerText = 90;
-                    distance.innerText = 60;
-                    commentary.innerText = `"And the game is about to begin..."`;
-
-                    // disable buttons
-                    for (let i = 0; i < buttons.length; i++) {
-                        buttons[i].disabled = true;
-                        buttons[i].classList.remove("hover:bg-green-500", "hover:text-white");
-                    }
-                    gameEndModal.classList.add("hidden");
+                // Wait for the endWhistle to finish before stopping the crowdAudio
+                endWhistle.addEventListener("ended", function () {
+                    crowdAudio.pause();
+                    crowdAudio.currentTime = 0;
+                    showEndModal();
                 });
-            });
+            } else {
+                showEndModal();
+            }
         }
     }, 1000);
+
+    /**
+     * Function to bring up game end modal when countdown reaches 0
+     */
+    function showEndModal() {
+        document.getElementById("goals-total").innerText = goals.innerText;
+        // ensure correct pluralisation
+        const pluralCheck = parseInt(goals.innerText);
+        if (pluralCheck < 2) {
+            document.getElementById("plural").innerText = "goal";
+        } else {
+            document.getElementById("plural").innerText = "goals";
+        }
+        gameEndModal.classList.remove("hidden");
+
+        closeGameEndModal.addEventListener("click", function () {
+            goals.innerText = 0;
+            time.innerText = 90;
+            distance.innerText = 60;
+            commentary.innerText = `"And the game is about to begin..."`;
+
+            // disable buttons
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].disabled = true;
+                buttons[i].classList.remove("hover:bg-green-500", "hover:text-white");
+            }
+            gameEndModal.classList.add("hidden");
+        });
+    }
 }
 
 /**
@@ -201,7 +229,9 @@ async function shoot() {
             goal();
             return;
         } else {
-            missedShot.play();
+            if (soundOn) {
+                missedShot.play();
+            }
             commentary.innerText = `"You'll never score from that far out!"`;
             returnBall();
             return;
@@ -324,7 +354,9 @@ async function forwardTwo() {
  */
 async function goal() {
     let goalsUpdate = parseInt(goals.innerText);
-    goalAudio.play();
+    if (soundOn) {
+        goalAudio.play();
+    }
     commentary.innerText = `"It's a GOOOAAAAL!!"`;
     ball.style.left = "90%";
     goalsUpdate = goalsUpdate + 1;
