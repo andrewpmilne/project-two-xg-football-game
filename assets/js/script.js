@@ -112,6 +112,7 @@ function startGame() {
                     document.getElementById("goals").innerText = 0;
                     document.getElementById("time").innerText = 90;
                     document.getElementById("distance").innerText = 60;
+                    document.getElementById("commentary").innerText = `"And the game is about to begin..."`;
 
                     for (let i = 0; i < buttons.length; i++) {
                         buttons[i].disabled = true;
