@@ -4,6 +4,10 @@
     font-style: normal;
 }
 
+nav button {
+    cursor: pointer;
+}
+
 .ball {
     position: absolute;
     width: 35px;
