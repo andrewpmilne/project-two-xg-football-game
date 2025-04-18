@@ -1,3 +1,5 @@
+/* jshint esversion: 8 */
+
 // when page loaded event listener
 document.addEventListener("DOMContentLoaded", function () {
     const welcomeModal = document.getElementById("welcome-modal");
