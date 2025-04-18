@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
     closeWelcomeModal.addEventListener("click", function () {
         welcomeModal.classList.add("hidden");
     });
-    const buttons = document.getElementsByClassName('game-button');
+    const buttons = document.getElementsByClassName("game-button");
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = true;
-        buttons[i].classList.remove('hover:bg-green-500', 'hover:text-white');
-        buttons[i].classList.add('disabled:bg-gray-400')
+        buttons[i].classList.remove("hover:bg-green-500", "hover:text-white");
+        buttons[i].classList.add("disabled:bg-gray-400")
     }
 });
 
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const ball = document.getElementById("ball");
 let countdown;
 let choice = [];
-const possibleChoice = ['Long Pass', 'Short Pass', 'Dribble'];
+const possibleChoice = ["Long Pass", "Short Pass", "Dribble"];
 const goals = document.getElementById("goals");
 const distance = document.getElementById("distance");
 const time = document.getElementById("time");
@@ -32,7 +32,7 @@ const gameEndModal = document.getElementById("game-end-modal");
 const closeGameEndModal = document.getElementById("close-game-end-modal");
 
 // button variables
-const buttons = document.getElementsByClassName('game-button');
+const buttons = document.getElementsByClassName("game-button");
 const startButton = document.getElementById("start-game");
 
 // buttons event listener
@@ -72,7 +72,7 @@ function startGame() {
 
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = false;
-        buttons[i].classList.add('hover:bg-green-500', 'hover:text-white');
+        buttons[i].classList.add("hover:bg-green-500", "hover:text-white");
     }
 
     goals.innerText = 0;
@@ -91,7 +91,7 @@ function startGame() {
                 endWhistle.play();
             }
             // Wait for the endWhistle to finish before stopping the crowdAudio
-            endWhistle.addEventListener('ended', function () {
+            endWhistle.addEventListener("ended", function () {
                 crowdAudio.pause();
                 crowdAudio.currentTime = 0;
                 clearInterval(countdown);
@@ -113,7 +113,7 @@ function startGame() {
 
                     for (let i = 0; i < buttons.length; i++) {
                         buttons[i].disabled = true;
-                        buttons[i].classList.remove('hover:bg-green-500', 'hover:text-white');
+                        buttons[i].classList.remove("hover:bg-green-500", "hover:text-white");
                     }
                     gameEndModal.classList.add("hidden");
                 });
@@ -136,7 +136,7 @@ function compChoice(playerChoice) {
     // disable buttons
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = true;
-        buttons[i].classList.remove('hover:bg-green-500', 'hover:text-white');
+        buttons[i].classList.remove("hover:bg-green-500", "hover:text-white");
     }
 
     //check if shoot has been pressed
@@ -168,13 +168,13 @@ function compChoice(playerChoice) {
     // then generate random defence
     const randomNumber = Math.floor(Math.random() * 100) + 1;
     if (randomNumber <= 20) {
-        compDefence = 'Short Pass';
+        compDefence = "Short Pass";
     } else if (randomNumber > 20 && randomNumber <= 40) {
-        compDefence = 'Dribble';
+        compDefence = "Dribble";
     } else if (randomNumber > 40 && randomNumber <= 80) {
-        compDefence = 'Long Pass';
+        compDefence = "Long Pass";
     } else {
-        compDefence = 'No Defence';
+        compDefence = "No Defence";
     }
     resolvePlay(playerChoice, compDefence);
 }
@@ -244,7 +244,7 @@ function resolvePlay(playerChoice, compDefence) {
         commentary.innerText = `"Bad luck! Intercepted."`;
         returnBall();
     } else {
-        if (playerChoice === 'Long Pass') {
+        if (playerChoice === "Long Pass") {
             forwardTwo();
         } else {
             forwardOne();
@@ -274,7 +274,7 @@ async function forwardOne() {
     await sleep(1100);
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = false;
-        buttons[i].classList.add('hover:bg-green-500', 'hover:text-white');
+        buttons[i].classList.add("hover:bg-green-500", "hover:text-white");
     }
 }
 
@@ -296,7 +296,7 @@ async function forwardTwo() {
     await sleep(1100);
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = false;
-        buttons[i].classList.add('hover:bg-green-500', 'hover:text-white');
+        buttons[i].classList.add("hover:bg-green-500", "hover:text-white");
     }
 }
 
@@ -324,7 +324,7 @@ async function returnBall() {
     commentary.innerText = `"Time for another attack..."`;
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = false;
-        buttons[i].classList.add('hover:bg-green-500', 'hover:text-white');
+        buttons[i].classList.add("hover:bg-green-500", "hover:text-white");
     }
 }
 
@@ -335,5 +335,5 @@ function sleep(ms) {
 
 // check document is on screen function
 function isDocumentHidden() {
-    return document.hidden || document.visibilityState === 'hidden';
+    return document.hidden || document.visibilityState === "hidden";
 }
