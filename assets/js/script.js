@@ -364,7 +364,7 @@ function missed(missedPosition) {
     } else if (missedPosition === 40) {
         commentary.innerText = `"Bad luck but you're still a long way from goal."`;
     } else if (missedPosition === 20) {
-        commentary.innerText = `"Getting closer, but you could still be nearer"`;
+        commentary.innerText = `"Getting closer, but you could still be nearer."`;
     } else if (missedPosition === 10) {
         commentary.innerText = `"Oh bad luck! That was quite a good chance!"`;
     } else {
