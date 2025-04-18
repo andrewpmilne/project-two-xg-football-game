@@ -229,11 +229,7 @@ async function shoot() {
             goal();
             return;
         } else {
-            if (soundOn) {
-                missedShot.play();
-            }
-            commentary.innerText = `"You'll never score from that far out!"`;
-            returnBall();
+            missed(shotPosition);
             return;
         }
     } else if (shotPosition === 40) {
@@ -241,9 +237,7 @@ async function shoot() {
             goal();
             return;
         } else {
-            missedShot.play();
-            commentary.innerText = `"Very little chance of that going in."`;
-            returnBall();
+            missed(shotPosition);
             return;
         }
     } else if (shotPosition === 20) {
@@ -251,9 +245,7 @@ async function shoot() {
             goal();
             return;
         } else {
-            missedShot.play();
-            commentary.innerText = `"Ooooh! Close but still too far out."`;
-            returnBall();
+            missed(shotPosition);
             return;
         }
     } else if (shotPosition === 10) {
@@ -261,9 +253,7 @@ async function shoot() {
             goal();
             return;
         } else {
-            missedShot.play();
-            commentary.innerText = `"Oh! Bad luck but it's missed."`;
-            returnBall();
+            missed(shotPosition);
             return;
         }
     } else if (shotPosition === 1) {
@@ -271,9 +261,7 @@ async function shoot() {
             goal();
             return;
         } else {
-            missedShot.play();
-            commentary.innerText = `"Oh no! You've missed a brilliant chance!"`;
-            returnBall();
+            missed(shotPosition);
             return;
         }
     }
@@ -362,6 +350,26 @@ async function goal() {
     goalsUpdate = goalsUpdate + 1;
     goals.innerText = goalsUpdate;
     await sleep(1500);
+    returnBall();
+}
+/** 
+ * Function to run on missed shot 
+ */
+function missed(missedPosition) {
+    if (soundOn) {
+        missedShot.play();
+    }
+    if (missedPosition === 60) {
+        commentary.innerText = `"You'll never score from that far out!"`;
+    } else if (missedPosition === 40) {
+        commentary.innerText = `"Bad luck but you're still a long way from goal."`;
+    } else if (missedPosition === 20) {
+        commentary.innerText = `"Getting closer, but you could still be nearer"`;
+    } else if (missedPosition === 10) {
+        commentary.innerText = `"Oh bad luck! That was quite a good chance!"`;
+    } else {
+        commentary.innerText = `"Oh no! You missed a brilliant chance!"`;
+    }
     returnBall();
 }
 
