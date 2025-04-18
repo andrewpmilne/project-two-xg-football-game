@@ -188,18 +188,12 @@ function compChoice(playerChoice) {
 // function to run if shot button is pressed at any time
 async function shoot() {
     const shotPosition = parseInt(document.getElementById("distance").innerText);
-    let goals = parseInt(document.getElementById("goals").innerText);
     const shotRandomNumber = Math.floor(Math.random() * 100) + 1;
 
     // calculate shot success based on distance from goal
     if (shotPosition === 60) {
         if (shotRandomNumber < 2) {
-            goalAudio.play();
-            ball.style.left = "90%";
-            goals = goals + 1;
-            document.getElementById("goals").innerText = goals;
-            await sleep(1500);
-            returnBall();
+            goal();
             return;
         } else {
             missedShot.play();
@@ -208,12 +202,7 @@ async function shoot() {
         }
     } else if (shotPosition === 40) {
         if (shotRandomNumber < 6) {
-            goalAudio.play();
-            ball.style.left = "90%";
-            goals = goals + 1;
-            document.getElementById("goals").innerText = goals;
-            await sleep(1500);
-            returnBall();
+            goal();
             return;
         } else {
             missedShot.play();
@@ -222,12 +211,7 @@ async function shoot() {
         }
     } else if (shotPosition === 20) {
         if (shotRandomNumber < 15) {
-            goalAudio.play();
-            ball.style.left = "90%";
-            goals = goals + 1;
-            document.getElementById("goals").innerText = goals;
-            await sleep(1500);
-            returnBall();
+            goal();
             return;
         } else {
             missedShot.play();
@@ -236,12 +220,7 @@ async function shoot() {
         }
     } else if (shotPosition === 10) {
         if (shotRandomNumber < 50) {
-            goalAudio.play();
-            ball.style.left = "90%";
-            goals = goals + 1;
-            document.getElementById("goals").innerText = goals;
-            await sleep(1500);
-            returnBall();
+            goal();
             return;
         } else {
             missedShot.play();
@@ -250,12 +229,7 @@ async function shoot() {
         }
     } else if (shotPosition === 1) {
         if (shotRandomNumber < 85) {
-            goalAudio.play();
-            ball.style.left = "90%";
-            goals = goals + 1;
-            document.getElementById("goals").innerText = goals;
-            await sleep(1500);
-            returnBall();
+            goal();
             return;
         } else {
             missedShot.play();
@@ -327,6 +301,17 @@ async function forwardTwo() {
         buttons[i].disabled = false;
         buttons[i].classList.add('hover:bg-green-500', 'hover:text-white');
     }
+}
+
+async function goal() {
+    let goals = parseInt(document.getElementById("goals").innerText);
+    goalAudio.play();
+    document.getElementById("commentary").innerText = `"It's a GOOOAAAAL!!"`;
+    ball.style.left = "90%";
+    goals = goals + 1;
+    document.getElementById("goals").innerText = goals;
+    await sleep(1500);
+    returnBall();
 }
 
 async function returnBall() {
