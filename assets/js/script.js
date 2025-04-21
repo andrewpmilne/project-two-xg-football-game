@@ -109,6 +109,19 @@ async function startGame() {
         buttons[i].classList.add("hover:bg-green-500", "hover:text-white");
     }
 
+    // Check for sound toggle on and off loop
+    let wasSoundOn = soundOn;
+
+    let soundCheck = setInterval(() => {
+        if (soundOn && !wasSoundOn) {
+            crowdAudio.play();
+            wasSoundOn = true;
+        } else if (!soundOn && wasSoundOn) {
+            crowdAudio.pause();
+            wasSoundOn = false;
+        }
+    }, 500);
+
     goals.innerText = 0;
     distance.innerText = 60;
     time.innerText = 90;
@@ -126,8 +139,6 @@ async function startGame() {
                 endWhistle.play();
                 // Wait for the endWhistle to finish before stopping the crowdAudio
                 endWhistle.addEventListener("ended", function () {
-                    crowdAudio.pause();
-                    crowdAudio.currentTime = 0;
                     showEndModal();
                 });
             } else {
@@ -140,6 +151,8 @@ async function startGame() {
      * Function to bring up game end modal when countdown reaches 0
      */
     function showEndModal() {
+        crowdAudio.pause();
+        crowdAudio.currentTime = 0;
         document.getElementById("goals-total").innerText = goals.innerText;
         // ensure correct pluralisation
         const pluralCheck = parseInt(goals.innerText);
