@@ -29,18 +29,18 @@ All the Must Have and Should Have User Stories were fully completed with all fea
 This website includes a number of features to reach the aims of teaching about XG and providing an enjoyable gaming experience.
 
 ### Navbar and Footer ###
-The navbar is simple to avoid ditracting from the game itself. As a result, it did not need to have a dropdown menu. It does include:
-    - A Title (Football XG Game)
-    - A sound button to toggle sound on and off
-    - A link to go to the game page
-    - A link to go to the rules page
+The navbar is simple to avoid distracting from the game itself. As a result, it did not need to have a dropdown menu. It does include:
+- A Title (Football XG Game)
+- A sound button to toggle sound on and off
+- A link to go to the game page
+- A link to go to the rules page
 
 ![Navbar Screenshot](readme-resources/navbar-screenshot.png)
 
 The footer is also kept simple for the same reasons. It includes: 
-    - A Title (Football XG Game)
-    - Copywrite information
-    - A link to the author's GitHub page
+ - A Title (Football XG Game)
+ - Copywrite information
+ - A link to the author's GitHub page
 
 ![Footer Screenshot](readme-resources/footer-screenshot.png)
 
@@ -86,18 +86,30 @@ The pitch and football are images that represent the main play area of the game.
 
 ![Ball in middle of Pitch SCreenshot](readme-resources/pitch-screeshot-two.png)
 
+### Sounds ###
+Sound effects are a significant feature of the website as they aid the user experience by making it seem more realistically like a football match. As is best practice and industry standard, the sound is muted by default when the website first loads. The welcome modal encourages users to switch it on. The crowd noise, referee's whistle to signify the start and end of the game and cheers/ gasps add to the experience as well as making the gameplay clearer to users. 
+
 ### End Game Modal ###
 JavaScript is used to ensure the game and modal appears at the end of the game. It is used to inform the user of their goals total (thus creating a competitive element to add to the experience) and give them the option of playing again or reading the rules. Correct pluralisation occurs depending on if 1 goal or multiple goals are scored.
 
 ![Game End Modal Screenshot](readme-resources/game-end-modal-screenshot.png)
 
 ### Features left to Implement ###
+The website could benefit from a number of future features. 
+- A leaderboard would be a very good feature to aid competitive play and is the final part of the 'Could Have' User Story.
+- More sounds could be incorporated, such as crowd groaning when a move results in the ball returning to the start or more dramatic cheers if a goal has been scored from a greater distance.
 
 ## Design ##
 
 ## Testing ##
 
 ## Bugs ##
+A number of bugs occured throughout the creation of this project:
+- Linking Tailwind to the deployed version of this website did not work for a long time, and the issue did not occur in the live preview version. This period is reflected in a number of commits referring to changing the href as it was thought this was the issue. The bug was fixed when it was noticed that in GitHub (but not in VS Code) the JavaSCript folder name was incorrectly in uppercase lettering. This had previously been corrected in VS Code but had not automatically updated in GitHub. Once this was corrected, Tailwind worked as expected.
+- A number of issues occured related to the sound effects in the website.
+  - Initially, sound was continuing even if the screen was minimised. This was corrected in the JavaSCript code.
+  - After this, the crowd sound would continue after the game had finished if the screen had been minimised at some point. This was corrected by ending the sound in the gameEndModal function.
+  - Finally, as the crowd noise is continuous throughout the game it was not toggling on or off if the sound button was pressed mid-game. This was corrected by coding a loop the repeatedly checked if the sound button had been toggled to on or off. 
 
 ## Validation ##
 
