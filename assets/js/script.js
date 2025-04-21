@@ -82,7 +82,7 @@ soundButton.addEventListener('click', () => {
 document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
         crowdAudio.pause();
-    } else if (parseInt(document.getElementById("time").innerText) < 90 && soundOn) {
+    } else if (parseInt(document.getElementById("time").innerText) > 0 && soundOn) {
         crowdAudio.play();
     }
 });
@@ -100,6 +100,7 @@ async function startGame() {
     if (soundOn) {
         startWhistle.play();
         crowdAudio.volume = 0.5;
+        crowdAudio.currentTime = 0;
         crowdAudio.play();
     }
 
@@ -111,16 +112,17 @@ async function startGame() {
 
     // Check for sound toggle on and off loop
     let wasSoundOn = soundOn;
-
     let soundCheck = setInterval(() => {
-        if (soundOn && !wasSoundOn) {
-            crowdAudio.play();
-            wasSoundOn = true;
-        } else if (!soundOn && wasSoundOn) {
-            crowdAudio.pause();
-            wasSoundOn = false;
-        }
-    }, 500);
+            if (soundOn && !wasSoundOn) {
+                crowdAudio.currentTime = 0;
+                crowdAudio.play();
+                wasSoundOn = true;
+            } else if (!soundOn && wasSoundOn) {
+                crowdAudio.pause();
+                wasSoundOn = false;
+            }
+        },
+        500);
 
     goals.innerText = 0;
     distance.innerText = 60;
