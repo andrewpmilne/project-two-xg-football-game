@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].disabled = true;
         buttons[i].classList.remove("hover:bg-green-500", "hover:text-white");
-        buttons[i].classList.add("disabled:bg-gray-400")
+        buttons[i].classList.add("disabled:bg-gray-400");
     }
 
     // start button event listener
@@ -112,7 +112,7 @@ async function startGame() {
 
     // Check for sound toggle on and off loop
     let wasSoundOn = soundOn;
-    let soundCheck = setInterval(() => {
+    setInterval(() => {
             if (soundOn && !wasSoundOn) {
                 crowdAudio.currentTime = 0;
                 crowdAudio.play();
