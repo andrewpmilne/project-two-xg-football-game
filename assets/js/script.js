@@ -90,7 +90,7 @@ document.addEventListener("visibilitychange", () => {
 /**
  * Function to run on start button pressed
  */
-async function startGame() {
+function startGame() {
     document.getElementById("start-game").innerText = "Game Beginning...";
     // await sleep(1500);
     clearInterval(countdown);
