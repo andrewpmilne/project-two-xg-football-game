@@ -132,7 +132,7 @@ function startGame() {
         document.getElementById("goals-total").innerText = goals.innerText;
         // ensure correct pluralisation
         const pluralCheck = parseInt(goals.innerText);
-        if (pluralCheck < 2) {
+        if (pluralCheck === 1) {
             document.getElementById("plural").innerText = "goal";
         } else {
             document.getElementById("plural").innerText = "goals";
