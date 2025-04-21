@@ -38,8 +38,14 @@ The navbar is simple to avoid ditracting from the game itself. As a result, it d
 ![Navbar Screenshot](readme-resources/navbar-screenshot.png)
 
 ### Welcome Modal ###
+The welcome modal appears when the website is loaded <strong> for the first time </strong>. This is necessary as it would be annoying if it appeared every time the game was loaded (or, for example, when returning from the rules page). It gives a brief outline of the game to entice users. It gives the option of navigating straight to the game or to go to the rules page for more information. It also encourages users to turn the sound on as this aids overall user experience when playing.
+
+![Welcome Modal Screenshot](readme-resources/welcome-modal-screenshot.png)
 
 ### Rules Page ###
+The rules page gives the user more information about XG as well as explaining the rules of the game. This page is kept simple to ensure users can gain the infomation they need as quickly as they can before experiencing the game itself.
+
+![Rules Page Screenshot](readme-resources/rules-screenshot.png)
 
 ### Information Section ###
 
