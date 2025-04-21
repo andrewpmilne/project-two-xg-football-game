@@ -92,7 +92,7 @@ document.addEventListener("visibilitychange", () => {
  */
 async function startGame() {
     document.getElementById("start-game").innerText = "Game Beginning...";
-    await sleep(1500);
+    // await sleep(1500);
     clearInterval(countdown);
     choice = [];
     ball.style.left = "10%";
