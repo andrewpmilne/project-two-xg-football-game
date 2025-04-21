@@ -48,8 +48,22 @@ The rules page gives the user more information about XG as well as explaining th
 ![Rules Page Screenshot](readme-resources/rules-screenshot.png)
 
 ### Information Section ###
+This section was included on the top left of the screen as it is the key information players need to know when playing the game, particularly the number of goals they have scored and the time remaining so thy know how long they have left. The statistics update as the game is being played. 
+
+![Information Screenshot](readme-resources/information-screenshot.png)
 
 ### Buttons ###
+The buttons appear at the top in the middle on larger screens, but appear at the bottom (below the pitch) on smaller screens. This is because when holding a device such as a phone and being required to tap buttons, you do not want your hand to cover important information on the screen. The game buttons are grey at points in the game when they are disabled. When they are enabled, they appear green and a cursor hovering over them will change to the 'pointer' symbol. 
+
+The start button changes message once a game has begun so that a player is aware that they will be restarting a game if they click on it. An alert also appears at this stage to ensure the player genuinely means to restart their game and lose their current score.
+
+![Disabled Buttons Screenshot](readme-resources/disabled-buttons-screenshot.png)
+
+![Enabled Buttons Screenshot](readme-resources/enabled-buttons-screenshot.png)
+
+![Alert confirmation Screenshot](readme-resources/restart-alert-screenshot.png)
+
+### Commentary ###
 
 ### Pitch Image / Play Area ###
 
