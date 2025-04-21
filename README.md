@@ -37,6 +37,13 @@ The navbar is simple to avoid ditracting from the game itself. As a result, it d
 
 ![Navbar Screenshot](readme-resources/navbar-screenshot.png)
 
+The footer is also kept simple for the same reasons. It includes: 
+    - A Title (Football XG Game)
+    - Copywrite information
+    - A link to the author's GitHub page
+
+![Footer Screenshot](readme-resources/footer-screenshot.png)
+
 ### Welcome Modal ###
 The welcome modal appears when the website is loaded <strong> for the first time </strong>. This is necessary as it would be annoying if it appeared every time the game was loaded (or, for example, when returning from the rules page). It gives a brief outline of the game to entice users. It gives the option of navigating straight to the game or to go to the rules page for more information. It also encourages users to turn the sound on as this aids overall user experience when playing.
 
@@ -64,6 +71,13 @@ The start button changes message once a game has begun so that a player is aware
 ![Alert confirmation Screenshot](readme-resources/restart-alert-screenshot.png)
 
 ### Commentary ###
+The commentary section was added towards the end of the project to aid user experience and make the movement of the ball in the game clearer, particularly for users not playing with sound on (where goals are indicated by crowd noise). The commentary changes depending on the button that has been pressed and the result that has occured.
+
+![Successful pass screenshot](readme-resources/commentary-screenshot-one.png)
+
+![Interception Screenshot](readme-resources/commentary-screenshot-two.png)
+
+![Goal Screenshot](readme-resources/commentary-screenshot-three.png)
 
 ### Pitch Image / Play Area ###
 
