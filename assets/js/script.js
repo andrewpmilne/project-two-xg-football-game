@@ -225,42 +225,42 @@ async function shoot() {
     // calculate shot success based on distance from goal
     if (shotPosition === 60) {
         if (shotRandomNumber < 2) {
-            goal();
+            goalScoredFunction();
             return;
         } else {
-            missed(shotPosition);
+            missedShotFunction(shotPosition);
             return;
         }
     } else if (shotPosition === 40) {
         if (shotRandomNumber < 6) {
-            goal();
+            goalScoredFunction();
             return;
         } else {
-            missed(shotPosition);
+            missedShotFunction(shotPosition);
             return;
         }
     } else if (shotPosition === 20) {
         if (shotRandomNumber < 15) {
-            goal();
+            goalScoredFunction();
             return;
         } else {
-            missed(shotPosition);
+            missedShotFunction(shotPosition);
             return;
         }
     } else if (shotPosition === 10) {
         if (shotRandomNumber < 50) {
-            goal();
+            goalScoredFunction();
             return;
         } else {
-            missed(shotPosition);
+            missedShotFunction(shotPosition);
             return;
         }
     } else if (shotPosition === 1) {
         if (shotRandomNumber < 85) {
-            goal();
+            goalScoredFunction();
             return;
         } else {
-            missed(shotPosition);
+            missedShotFunction(shotPosition);
             return;
         }
     }
@@ -339,7 +339,7 @@ async function forwardTwo() {
 /**
  * Function to run on goal scored
  */
-async function goal() {
+async function goalScoredFunction() {
     let goalsUpdate = parseInt(goals.innerText);
     if (soundOn) {
         goalAudio.play();
@@ -354,7 +354,7 @@ async function goal() {
 /** 
  * Function to run on missed shot 
  */
-function missed(missedPosition) {
+function missedShotFunction(missedPosition) {
     if (soundOn) {
         missedShot.play();
     }
