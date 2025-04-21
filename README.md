@@ -80,8 +80,16 @@ The commentary section was added towards the end of the project to aid user expe
 ![Goal Screenshot](readme-resources/commentary-screenshot-three.png)
 
 ### Pitch Image / Play Area ###
+The pitch and football are images that represent the main play area of the game. Tailwind classes and CSS Flexbox is used to position them accurately. JavaScript and CSS transitions are used to move the ball across the screen when required.
+
+![Ball at Start of Pitch Screenshot](readme-resources/pitch-screenshot-one.png)
+
+![Ball in middle of Pitch SCreenshot](readme-resources/pitch-screeshot-two.png)
 
 ### End Game Modal ###
+JavaScript is used to ensure the game and modal appears at the end of the game. It is used to inform the user of their goals total (thus creating a competitive element to add to the experience) and give them the option of playing again or reading the rules. Correct pluralisation occurs depending on if 1 goal or multiple goals are scored.
+
+![Game End Modal Screenshot](readme-resources/game-end-modal-screenshot.png)
 
 ### Features left to Implement ###
 
