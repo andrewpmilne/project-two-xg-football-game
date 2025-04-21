@@ -80,11 +80,13 @@ document.addEventListener("visibilitychange", () => {
 /**
  * Function to run on start button pressed
  */
-function startGame() {
-    console.log("working");
+async function startGame() {
+    document.getElementById("start-game").innerText = "Game Beginning...";
+    await sleep(1500);
     clearInterval(countdown);
     choice = [];
     ball.style.left = "10%";
+    document.getElementById("start-game").innerText = "End Game and Restart";
     if (soundOn) {
         startWhistle.play();
         crowdAudio.volume = 0.5;
@@ -143,6 +145,7 @@ function startGame() {
             time.innerText = 90;
             distance.innerText = 60;
             commentary.innerText = `"And the game is about to begin..."`;
+            document.getElementById("start-game").innerText = "Start Game";
 
             // disable buttons
             for (let i = 0; i < buttons.length; i++) {
