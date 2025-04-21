@@ -58,13 +58,12 @@ const missedShot = new Audio("assets/sounds/missed-shot.m4a");
 
 //toggle sound on and off
 const soundButton = document.getElementById('sound');
-let soundOn = localStorage.getItem('soundOn') === 'true';
-soundButton.textContent = soundOn ? '🔊' : '🔇';
-soundButton.setAttribute('aria-label', soundOn ? 'Sound on' : 'Sound off');
+let soundOn = false;
+soundButton.textContent = '🔇';
+soundButton.setAttribute('aria-label', 'Sound off');
 
 soundButton.addEventListener('click', () => {
     soundOn = !soundOn;
-    localStorage.setItem('soundOn', soundOn);
     soundButton.textContent = soundOn ? '🔊' : '🔇';
     soundButton.setAttribute('aria-label', soundOn ? 'Sound on' : 'Sound off');
 });
