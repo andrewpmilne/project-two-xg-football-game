@@ -120,7 +120,12 @@ A number of bugs occured throughout the creation of this project:
 ## Credits ##
 <a href="https://www.flaticon.com/free-icons/soccer" title="soccer icons">Soccer icons created by mavadee - Flaticon</a>
 s
+
 ## Thanks ##
+I would like to thank:
+- My mentor, Juliia Konovalova, for help throughout the project, particularly for helping to identify the bugs relating to the sound.
+- My friends, Carl Vatcha, Keith Newman and Jonny Perera for playtesting the game to look for bugs.
+- My wife, Annabelle Milne, for support and looking after our kids whilst I completed this project!
 
 
 
