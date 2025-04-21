@@ -21,7 +21,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // start button event listener
-    startButton.addEventListener("click", startGame);
+    startButton.addEventListener("click", function () {
+        const timeValue = parseInt(time.innerText);
+        if (timeValue < 90) {
+            const confirmRestart = confirm("Are you sure you want to restart the game and lose your current goals total?");
+            if (confirmRestart) {
+                startGame();
+            }
+        } else {
+            startGame();
+        }
+    });
 
     // event listener for buttons pressed.
     for (let i = 0; i < buttons.length; i++) {
