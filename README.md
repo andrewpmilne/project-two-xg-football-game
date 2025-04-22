@@ -158,10 +158,22 @@ The live site can be found here:
 - https://andrewpmilne.github.io/project-two-xg-football-game/
 
 ## Technologies Used ##
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) was used as the foundation of the site.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/css) - was used to add the styles and layout of the site.
+- [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) - was used in media queries and to style, including to position of the football on top of the pitch.
+- [Tailwind](https://tailwindcss.com/) - was used to style elements throughout the project, including ensuring responsiveness. 
+- [Balsamiq](https://balsamiq.com/) was used to make wireframes for the website.
+- [Lucid Chart](https://www.lucidchart.com/) was used to design flowcharts for the user experience and the flow of functions throughout the game.
+- [VSCode](https://code.visualstudio.com/) was used as the main tool to write and edit code.
+- [Git](https://git-scm.com/) was used for the version control of the website.
+- [GitHub](https://github.com/) was used to host the code of the website and log notes in the design process.
 
 ## Credits ##
-<a href="https://www.flaticon.com/free-icons/soccer" title="soccer icons">Soccer icons created by mavadee - Flaticon</a>
-s
+The following sites were used to assist with the project:
+- https://tailwindcss.com/ (linked in the HTML code to aid design and responsiveness).
+- https://fontawesome.com/ (linked in the HTML code for social media icons).
+- https://stackoverflow.com/ (for assistance with code-related queries).
+- https://www.w3.org/ (for guides and tutorials with specific code).
 
 ## Thanks ##
 I would like to thank:
