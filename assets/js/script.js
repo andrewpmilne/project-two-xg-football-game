@@ -22,9 +22,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // start button event listener
     startButton.addEventListener("click", function () {
+        // sounds primers for safari browser
         crowdAudio.play();
         crowdAudio.pause();
         crowdAudio.currentTime = 0;
+        startWhistle.play();
+        startWhistle.pause();
+        startWhistle.currentTime = 0;
+        endWhistle.play();
+        endWhistle.pause();
+        endWhistle.currentTime = 0;
+        goalAudio.play();
+        goalAudio.pause();
+        goalAudio.currentTime = 0;
+        missedShot.play();
+        missedShot.pause();
+        missedShot.currentTime = 0;
+
         const timeValue = parseInt(time.innerText);
         if (timeValue < 90) {
             const confirmRestart = confirm("Are you sure you want to restart the game and lose your current goals total?");
