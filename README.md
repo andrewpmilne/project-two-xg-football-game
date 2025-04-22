@@ -50,12 +50,12 @@ The welcome modal appears when the website is loaded <strong> for the first time
 ![Welcome Modal Screenshot](readme-resources/welcome-modal-screenshot.png)
 
 ### Rules Page ###
-The rules page gives the user more information about XG as well as explaining the rules of the game. This page is kept simple to ensure users can gain the infomation they need as quickly as they can before experiencing the game itself.
+The rules page gives the user more information about XG as well as explaining the rules of the game. This page is kept simple to ensure users can gain the information they need as quickly as they can before experiencing the game itself.
 
 ![Rules Page Screenshot](readme-resources/rules-screenshot.png)
 
 ### Information Section ###
-This section was included on the top left of the screen as it is the key information players need to know when playing the game, particularly the number of goals they have scored and the time remaining so thy know how long they have left. The statistics update as the game is being played. 
+This section was included on the top left of the screen as it is the key information players need to know when playing the game, particularly the number of goals they have scored and the time remaining so they know how long they have left. The statistics update as the game is being played. 
 
 ![Information Screenshot](readme-resources/information-screenshot.png)
 
@@ -80,7 +80,7 @@ The commentary section was added towards the end of the project to aid user expe
 ![Goal Screenshot](readme-resources/commentary-screenshot-three.png)
 
 ### Pitch Image / Play Area ###
-The pitch and football are images that represent the main play area of the game. Tailwind classes and CSS Flexbox is used to position them accurately. JavaScript and CSS transitions are used to move the ball across the screen when required.
+The pitch and football are images that represent the main play area of the game. Tailwind classes and CSS Flexbox are used to position them accurately. JavaScript and CSS transitions are used to move the ball across the screen when required.
 
 ![Ball at Start of Pitch Screenshot](readme-resources/pitch-screenshot-one.png)
 
@@ -90,7 +90,7 @@ The pitch and football are images that represent the main play area of the game.
 Sound effects are a significant feature of the website as they aid the user experience by making it seem more realistically like a football match. As is best practice and industry standard, the sound is muted by default when the website first loads. The welcome modal encourages users to switch it on. The crowd noise, referee's whistle to signify the start and end of the game and cheers/ gasps add to the experience as well as making the gameplay clearer to users. 
 
 ### End Game Modal ###
-JavaScript is used to ensure the game and modal appears at the end of the game. It is used to inform the user of their goals total (thus creating a competitive element to add to the experience) and give them the option of playing again or reading the rules. Correct pluralisation occurs depending on if 1 goal or multiple goals are scored.
+JavaScript is used to ensure the game end modal appears at the end of the game. It is used to inform the user of their goals total (thus creating a competitive element to add to the experience) and give them the option of playing again or reading the rules. Correct pluralisation occurs depending on if 1 goal or multiple goals are scored.
 
 ![Game End Modal Screenshot](readme-resources/game-end-modal-screenshot.png)
 
@@ -101,7 +101,7 @@ The website could benefit from a number of future features.
 
 ## Design ##
 ### Planning ###
-In the planning stage, flowcharts were created using lucid chart to design a rough outline of the user experience when playing the game and the 'flow' of functions through the JavaScript code.
+In the planning stage, flowcharts were created using Lucid Chart to design a rough outline of the user experience when playing the game and the 'flow' of functions through the JavaScript code.
  - User experience:
 
  ![User Experience Flowchart](readme-resources/user-experience.png)
@@ -143,6 +143,26 @@ The project is responsive and functions on all standard screen sizes, using Dev 
 
 ![video of the rules page responsiveness](readme-resources/responsiveness-two.gif)
 
+- The text in both pages is easily readable and understandable. Lighthouse was used to check for accessibility, including colour clashes.
+- All external links open in new tabs.
+- All links and buttons work.
+
+### Gameplay ###
+A significant amount of gameplay testing ('playtesting') was done to check for errors. This included:
+- Trying 'illegal' moves such as a pass when 1m from the goal to ensure correct alerts appeared.
+- Repeatedly pressing the same button to check that the computer 'learned' to defend against this move.
+- Pressing buttons too quickly to check that buttons were disabling at the right times.
+- Intentionally scoring 0 and 1 goals to check that the pluralisation was correct on the end game modal.
+- Minimising the screen mid-movement to check that the ball continued to travel to the correct place.
+
+### Sound ###
+Sound adds a lot to the user experience of this game. However, it needed to be tested a great deal to avoid errors. These included:
+- Ensuring that the sound toggle button started as muted and could be turned on and off.
+- Ensuring that all sounds only played if the toggle button was on, including if it was changed within the middle of gameplay.
+- Ensuring that the sound stopped if the screen was minimised.
+- Ensuring that the crowd noise stopped at the end of the game, even if it had only started in the middle of gameplay due to being toggled on.
+- Ensuring that sound worked on Safari, which processed the sounds differently to other browsers.
+
 ## Bugs ##
 A number of bugs occured throughout the creation of this project:
 - Linking Tailwind to the deployed version of this website did not work for a long time, and the issue did not occur in the live preview version. This period is reflected in a number of commits referring to changing the href as it was thought this was the issue. The bug was fixed when it was noticed that in GitHub (but not in VS Code) the JavaSCript folder name was incorrectly in uppercase lettering. This had previously been corrected in VS Code but had not automatically updated in GitHub. Once this was corrected, Tailwind worked as expected.
@@ -155,18 +175,18 @@ A number of bugs occured throughout the creation of this project:
 ## Validation ##
 
 ### HTML ###
-HTML was validated using the official W3C validator. 3 warning (not errors) were found relating to sections being used without headings. Sections were used rather than divs to assist screen readers, however headings were not necessary and would detract from the gameplay. Therefore the code was not altered.
+HTML was validated using the official W3C validator. 3 warnings (not errors) were found relating to sections being used without headings. Sections were used rather than divs to assist screen readers, however headings were not necessary and would detract from the gameplay. Therefore the code was not altered.
 ![w3c validator for index HTML](readme-resources/html-validator.png)
 
 The Rules page HTML passed the validator with no errors or warnings.
 ![w3c validator for rules HTML](readme-resources/rules-html-validation.png)
 
 ### CSS ###
-The custom style.css passed the W3C Jigsaw validation with no errors or warnings.
+The style.css passed the W3C Jigsaw validation with no errors or warnings.
 ![w3c validator for style.css](readme-resources/css-validator.png)
 
 ### JavaScript ###
-jshint was used to validate the JS code. One warning (no errors) was found relating to a function being called within a loop. After consultation with the Code Institute tutors and vigourous testing, it was found that the code ran successfully despite this warning and changes were not required.
+jshint was used to validate the JS code. One warning (no errors) was found relating to a function being called within a loop. After consultation with the Code Institute tutors and vigorous testing, it was found that the code ran successfully despite this warning and changes were not required.
 ![jshint validation](readme-resources/js-validator.png)
 
 ### Accessibility ###
@@ -200,7 +220,7 @@ The live site can be found here:
 ## Technologies Used ##
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) was used as the foundation of the site.
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/css) - was used to add the styles and layout of the site.
-- [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) - was used in media queries and to style, including to position of the football on top of the pitch.
+- [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) - was used in media queries and to style, including to position the football on top of the pitch.
 - [Tailwind](https://tailwindcss.com/) - was used to style elements throughout the project, including ensuring responsiveness. 
 - [Balsamiq](https://balsamiq.com/) was used to make wireframes for the website.
 - [Lucid Chart](https://www.lucidchart.com/) was used to design flowcharts for the user experience and the flow of functions throughout the game.
@@ -214,6 +234,7 @@ The following sites were used to assist with the project:
 - https://fontawesome.com/ (linked in the HTML code for social media icons).
 - https://stackoverflow.com/ (for assistance with code-related queries).
 - https://www.w3.org/ (for guides and tutorials with specific code).
+- https://chatgpt.com/ (for assistance with coding queries and for spotting syntax errors).
 
 ## Thanks ##
 I would like to thank:
