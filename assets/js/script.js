@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // start button event listener
     startButton.addEventListener("click", function () {
+        crowdAudio.play();
+        crowdAudio.pause();
+        crowdAudio.currentTime = 0;
         const timeValue = parseInt(time.innerText);
         if (timeValue < 90) {
             const confirmRestart = confirm("Are you sure you want to restart the game and lose your current goals total?");
@@ -90,9 +93,9 @@ document.addEventListener("visibilitychange", () => {
 /**
  * Function to run on start button pressed
  */
-function startGame() {
+async function startGame() {
     document.getElementById("start-game").innerText = "Game Beginning...";
-    // await sleep(1500);
+    await sleep(1500);
     clearInterval(countdown);
     choice = [];
     ball.style.left = "10%";
