@@ -100,8 +100,48 @@ The website could benefit from a number of future features.
 - More sounds could be incorporated, such as crowd groaning when a move results in the ball returning to the start or more dramatic cheers if a goal has been scored from a greater distance.
 
 ## Design ##
+### Planning ###
+In the planning stage, flowcharts were created using lucid chart to design a rough outline of the user experience when playing the game and the 'flow' of functions through the JavaScript code.
+ - User experience:
+
+ ![User Experience Flowchart](readme-resources/user-experience.png)
+
+ - Functions 'flow':
+
+ ![Functions Flowchart](readme-resources/functions-flowchart.png)
+
+### Appearance ###
+-A simple 'mono' font was used throughout the project for ease of understanding and for the user to focus on the pitch (playing area).
+-Colours that were clearly distinct from each other (lime and orange) were used to separate different areas of the website. This also allowed for text placed on top to be read easily and quickly.
+-Grey was used to signify buttons that were inactive as this would be clear to the user.
+-All buttons and links change colour when hovered over to indicate to the user what will happen if they are pressed.
 
 ## Testing ##
+The website has been tested in different browsers:
+
+- Chrome
+
+![Chrome Test](readme-resources/chrome-test.png)
+
+![Chrome Test Rules](readme-resources/chrome-test-two.png)
+
+- Edge
+
+![Edge Test](readme-resources/edge-test.png)
+
+![Edge Test Rules](readme-resources/edge-test-two.png)
+
+- Safari
+
+![Safari Test](readme-resources/safari-test.png)
+
+![Safari Test Rules](readme-resources/safari-test-two.png)
+
+The project is responsive and functions on all standard screen sizes, using Dev Tools device bar.
+
+![video of the index page responsiveness](readme-resources/responsiveness-one.gif)
+
+![video of the rules page responsiveness](readme-resources/responsiveness-two.gif)
 
 ## Bugs ##
 A number of bugs occured throughout the creation of this project:
