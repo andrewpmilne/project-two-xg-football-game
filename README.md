@@ -109,11 +109,53 @@ A number of bugs occured throughout the creation of this project:
 - A number of issues occured related to the sound effects in the website.
   - Initially, sound was continuing even if the screen was minimised. This was corrected in the JavaSCript code.
   - After this, the crowd sound would continue after the game had finished if the screen had been minimised at some point. This was corrected by ending the sound in the gameEndModal function.
-  - Finally, as the crowd noise is continuous throughout the game it was not toggling on or off if the sound button was pressed mid-game. This was corrected by coding a loop the repeatedly checked if the sound button had been toggled to on or off. 
+  - As the crowd noise is continuous throughout the game it was not toggling on or off if the sound button was pressed mid-game. This was corrected by coding a loop the repeatedly checked if the sound button had been toggled to on or off. 
+  - Finally, on testing it was discovered that the Safari browser did not initiate the sounds as other browsers did. This was fixed by briefly running the sounds earlier in the code so they would initiate at the correct times.
 
 ## Validation ##
 
+### HTML ###
+HTML was validated using the official W3C validator. 3 warning (not errors) were found relating to sections being used without headings. Sections were used rather than divs to assist screen readers, however headings were not necessary and would detract from the gameplay. Therefore the code was not altered.
+![w3c validator for index HTML](readme-resources/html-validator.png)
+
+The Rules page HTML passed the validator with no errors or warnings.
+![w3c validator for rules HTML](readme-resources/rules-html-validation.png)
+
+### CSS ###
+The custom style.css passed the W3C Jigsaw validation with no errors or warnings.
+![w3c validator for style.css](readme-resources/css-validator.png)
+
+### JavaScript ###
+jshint was used to validate the JS code. One warning (no errors) was found relating to a function being called within a loop. After consultation with the Code Institute tutors and vigourous testing, it was found that the code ran successfully despite this warning and changes were not required.
+![jshint validation](readme-resources/js-validator.png)
+
+### Accessibility ###
+Accessibility was checked using Lighthouse on both the index and rules pages:
+ - Index:
+
+ ![Index lighthouse ratings](readme-resources/index-lighthouse.png)
+
+ - Rules:
+
+ ![Rules lighthouse ratings](readme-resources/rules-lighthouse.png)
+
+ These results were particularly pleasing.
+
 ## Deployment ##
+This section describes the process required to deploy this project using GitHub.
+- Go to the Settings tab of your GitHub repo.
+- On the left-hand sidebar, in the Code and automation section, select Pages.
+  - Make sure:
+    - Source is set to 'Deploy from Branch'.
+    - Main branch is selected.
+    - Folder is set to / (root).
+- Under Branch, click Save.
+- Go back to the Code tab. Wait a few minutes for the build to finish and refresh your repo.
+- On the right-hand side, in the Environments section, click on 'github-pages'.
+Click View deployment to see the live site.
+
+The live site can be found here:
+- https://andrewpmilne.github.io/project-two-xg-football-game/
 
 ## Technologies Used ##
 
