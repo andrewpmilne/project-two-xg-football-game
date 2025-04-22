@@ -242,6 +242,10 @@ The following sites were used to assist with the project:
 - https://www.w3.org/ (for guides and tutorials with specific code).
 - https://chatgpt.com/ (for assistance with coding queries and for spotting syntax errors).
 
+## Media ##
+The images of the football pitch and the ball were taken from: https://www.shutterstock.com/
+The sounds were taken from https://pixabay.com/
+
 ## Thanks ##
 I would like to thank:
 - My mentor, Juliia Konovalova, for help throughout the project, particularly for helping to identify the bugs relating to the sound.
