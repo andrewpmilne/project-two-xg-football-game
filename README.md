@@ -189,6 +189,12 @@ The style.css passed the W3C Jigsaw validation with no errors or warnings.
 jshint was used to validate the JS code. One warning (no errors) was found relating to a function being called within a loop. After consultation with the Code Institute tutors and vigorous testing, it was found that the code ran successfully despite this warning and changes were not required.
 ![jshint validation](readme-resources/js-validator.png)
 
+The following metrics were returned:
+ - There are 23 functions in this file.
+ - Functions with the largest signature take 2 arguments, while the median is 0.
+ - The largest function has 32 statements, while the median is 9.
+ - The most complex function has a cyclomatic complexity value of 17, while the median is 3.
+
 ### Accessibility ###
 Accessibility was checked using Lighthouse on both the index and rules pages:
  - Index:
